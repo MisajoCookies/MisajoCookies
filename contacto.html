@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contáctanos | MisajoCookies Cali</title>
+    <meta name="description" content="Ponte en contacto con MisajoCookies. Pedidos, cotizaciones para eventos y más.">
+    <link rel="canonical" href="https://MisajoCookies.github.io/MisajoCookies/contacto.html" />
+
+    <style>
+        :root {
+            --color-primary: #3D2B1F;
+            --color-accent: #E35336;
+            --color-cream: #F5F5DC;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            margin: 0;
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+        }
+
+        .icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/components/misajo-header.js" defer></script>
+    <script src="assets/js/components/misajo-footer.js" defer></script>
+</head>
+
+<body>
+    <misajo-header></misajo-header>
+    <main>
+        <h1>Habla con Nosotros</h1>
+        <p style="text-align: center;">¿Tienes una duda o quieres personalizar tu pedido?</p>
+
+        <div class="contact-grid">
+            <div class="contact-card">
+                <span class="icon">📱</span>
+                <h3>WhatsApp</h3>
+                <p>La forma más rápida de pedir.</p>
+                <a href="https://wa.me/573159038449" class="btn btn-primary">Chatear Ahora</a>
+            </div>
+
+            <div class="contact-card">
+                <span class="icon">📸</span>
+                <h3>Instagram</h3>
+                <p>Mira nuestras últimas creaciones.</p>
+                <a href="https://instagram.com/misajocookie" class="btn btn-secondary">Ver Perfil</a>
+            </div>
+        </div>
+    </main>
+    <misajo-footer></misajo-footer>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>

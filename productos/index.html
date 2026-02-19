@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>Catálogo de Galletas Artesanales - MisajoCookies Cali</title>
+    <meta name="description"
+        content="Explora nuestra variedad de galletas artesanales: Mantequilla, ChocoChips, Alfajores y más. Pedidos a domicilio en Cali.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://MisajoCookies.github.io/MisajoCookies/productos/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Catálogo MisajoCookies - Cali">
+    <meta property="og:description" content="Nuestras deliciosas galletas artesanales listas para ti.">
+    <meta property="og:url" content="https://MisajoCookies.github.io/MisajoCookies/productos/">
+    <meta property="og:image"
+        content="https://MisajoCookies.github.io/MisajoCookies/assets/images/galletas-mantequilla.webp">
+
+    <!-- Styles -->
+    <style>
+        /* Critical CSS for Products Page */
+        :root {
+            --color-primary: #3D2B1F;
+            --color-accent: #E35336;
+            --color-cream: #F5F5DC;
+            --color-text: #2C1810;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../assets/css/slider.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/styles.css">
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../assets/js/components/misajo-header.js" defer></script>
+    <script src="../assets/js/components/misajo-footer.js" defer></script>
+</head>
+
+<body>
+    <misajo-header></misajo-header>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">Nuestros Productos</h1>
+            <p>Hechos con amor para ti</p>
+        </div>
+
+        <!-- Reusing the Grid Structure -->
+        <div class="products-grid">
+            <!-- Mantequilla -->
+            <div class="product-card">
+                <img src="../assets/images/galletas-mantequilla.webp" alt="Galletas de Mantequilla"
+                    class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Mantequilla</h2>
+                    <p class="product-description">Crujientes y decoradas con punto de fruta.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.000</div>
+                        <a href="galletas-mantequilla.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ChocoChips -->
+            <div class="product-card">
+                <img src="../assets/images/galletas-toping1.webp" alt="Galletas ChocoChips" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">ChocoChips</h2>
+                    <p class="product-description">Con trozos de chocolate semiamargo.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="galletas-chocochips.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fiesta -->
+            <div class="product-card">
+                <img src="../assets/images/galletas-toping2.webp" alt="Galletas Fiesta" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Fiesta</h2>
+                    <p class="product-description">Coloridas con toping de chocolate.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="galletas-fiesta.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alfajores -->
+            <div class="product-card">
+                <img src="../assets/images/alfajores.webp" alt="Alfajores Caseros" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Alfajores</h2>
+                    <p class="product-description">Rellenos de arequipe y azúcar glass.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="alfajores.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alfajores Corazon -->
+            <div class="product-card">
+                <img src="../assets/images/alfajores-corazon.webp" alt="Alfajores Corazón" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Corazón</h2>
+                    <p class="product-description">Alfajores con forma romántica.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="alfajores-corazon.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bigote -->
+            <div class="product-card">
+                <img src="../assets/images/galletas-bigote.webp" alt="Galletas Bigote" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Bigote</h2>
+                    <p class="product-description">Divertidas y con chocolate.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.000</div>
+                        <a href="galletas-bigote.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <misajo-footer></misajo-footer>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>

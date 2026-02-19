@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Combos y Regalos | MisajoCookies Cali</title>
+    <meta name="description"
+        content="Sorprende con nuestros combos de galletas artesanales. Regalos perfectos para toda ocasión en Cali.">
+
+    <link rel="canonical" href="https://MisajoCookies.github.io/MisajoCookies/combos/" />
+
+    <style>
+        :root {
+            --color-primary: #3D2B1F;
+            --color-accent: #E35336;
+            --color-cream: #F5F5DC;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 2rem;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            color: var(--color-primary);
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/styles.css">
+    </noscript>
+
+    <script src="../assets/js/components/misajo-header.js" defer></script>
+    <script src="../assets/js/components/misajo-footer.js" defer></script>
+</head>
+
+<body>
+    <misajo-header></misajo-header>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">Combos & Regalos</h1>
+            <p>La forma más dulce de decir "Te Quiero"</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Combo Deleite (Nuevo) -->
+            <div class="product-card">
+                <img src="../assets/images/combo-deleite.webp" alt="Combo Deleite" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Combo Deleite</h2>
+                    <p class="product-description">La mezcla perfecta de sabores clásicos.</p>
+                    <ul class="combo-features" style="font-size: 0.9rem; text-align: left; margin: 1rem 0;">
+                        <li>• 4 Galletas Chips</li>
+                        <li>• 4 Galletas Mantequilla</li>
+                        <li>• 2 Alfajores</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-tag">$12.000</div>
+                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Deleite"
+                            class="btn btn-primary btn-small" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Dulce -->
+            <div class="product-card">
+                <img src="../assets/images/combo-dulce.webp" alt="Combo Dulce" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Combo Dulce</h2>
+                    <p class="product-description">Para compartir en pareja.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$18.000</div>
+                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Dulce"
+                            class="btn btn-primary btn-small" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Premium -->
+            <div class="product-card">
+                <img src="../assets/images/combo-premium2.webp" alt="Combo Premium" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h2 class="product-name">Combo Premium</h2>
+                    <p class="product-description">La experiencia completa de Misajo.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$25.000</div>
+                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Premium"
+                            class="btn btn-primary btn-small" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <misajo-footer></misajo-footer>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>

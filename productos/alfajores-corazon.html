@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Alfajores Corazón | MisajoCookies Cali</title>
+    <meta name="description"
+        content="Alfajores en forma de corazón. El detalle romántico perfecto. Rellenos de arequipe.">
+
+    <link rel="canonical" href="https://MisajoCookies.github.io/MisajoCookies/productos/alfajores-corazon.html" />
+
+    <!-- Styles -->
+    <style>
+        :root {
+            --color-primary: #3D2B1F;
+            --color-accent: #E35336;
+            --color-cream: #F5F5DC;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .product-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .product-detail img {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        .product-title {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .price {
+            font-size: 2rem;
+            color: var(--color-accent);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .product-detail {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <link rel="stylesheet" href="../assets/css/styles.css" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/styles.css">
+    </noscript>
+
+    <!-- Scripts -->
+    <script src="../assets/js/components/misajo-header.js" defer></script>
+    <script src="../assets/js/components/misajo-footer.js" defer></script>
+</head>
+
+<body>
+    <misajo-header></misajo-header>
+
+    <main>
+        <div class="product-detail" itemscope itemtype="https://schema.org/Product">
+            <div class="image-container">
+                <img itemprop="image" src="../assets/images/alfajores-corazon.webp"
+                    alt="Alfajores Corazón MisajoCookies">
+            </div>
+            <div class="info-container">
+                <h1 itemprop="name" class="product-title">Alfajores Corazón</h1>
+                <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+                    <p class="price">$<span itemprop="price">3500</span> COP</p>
+                    <meta itemprop="priceCurrency" content="COP" />
+                </div>
+                <p itemprop="description">
+                    Demuestra tu cariño con nuestros Alfajores Corazón. La misma receta secreta de nuestros
+                    alfajores tradicionales pero con una forma especial para enamorar.
+                </p>
+                <ul>
+                    <li>Paquete x 50gr</li>
+                    <li>Forma de Corazón</li>
+                    <li>Ideal para San Valentín y Amor y Amistad</li>
+                </ul>
+                <br>
+                <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20pedir%20los%20Alfajores%20Corazón"
+                    class="btn btn-primary" target="_blank">
+                    Pedir por WhatsApp
+                </a>
+                <br><br>
+                <a href="index.html" style="text-decoration: underline; color: var(--color-primary);">← Volver al
+                    catálogo</a>
+            </div>
+        </div>
+    </main>
+
+    <misajo-footer></misajo-footer>
+    <script src="../assets/js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags Optimizados -->
+    <title>Catálogo Completo - MisajoCookies Cali | Galletas y Combos</title>
+    <meta name="description"
+        content="Descubre nuestro catálogo completo de galletas artesanales y combos de regalo. Alfajores, Mantequilla, ChocoChips y más. Domicilios en Cali.">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://MisajoCookies.github.io/MisajoCookies/catalogo.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Catálogo MisajoCookies - Cali">
+    <meta property="og:description" content="Explora todos nuestros productos y combos en un solo lugar.">
+    <meta property="og:url" content="https://MisajoCookies.github.io/MisajoCookies/catalogo.html">
+    <meta property="og:image"
+        content="https://MisajoCookies.github.io/MisajoCookies/assets/images/galletas-mantequilla.webp">
+
+    <!-- CSS -->
+    <style>
+        :root {
+            --color-primary: #3D2B1F;
+            --color-accent: #E35336;
+            --color-cream: #F5F5DC;
+            --color-text: #2C1810;
+            --font-display: 'Playfair Display', serif;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-cream);
+            margin: 0;
+            color: var(--color-text);
+            text-align: justify;
+            text-align-last: left;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            text-align: center;
+            text-align-last: center;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        main {
+            margin-top: 100px;
+            padding: 2rem;
+            max-width: 1400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 4rem;
+            padding: 2rem 0;
+            border-bottom: 2px solid rgba(61, 43, 31, 0.1);
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+
+        .section-separator {
+            margin: 4rem 0 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-separator::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: rgba(61, 43, 31, 0.2);
+            z-index: -1;
+        }
+
+        .section-title-cat {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            background: var(--color-cream);
+            padding: 0 2rem;
+            display: inline-block;
+            color: var(--color-accent);
+        }
+
+        /* Reusing styles from main css via link, but ensuring structure matches */
+    </style>
+
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Scripts -->
+    <script src="assets/js/components/misajo-header.js" defer></script>
+    <script src="assets/js/components/misajo-footer.js" defer></script>
+</head>
+
+<body>
+    <misajo-header></misajo-header>
+
+    <main>
+        <div class="page-header">
+            <h1 class="page-title">Nuestro Catálogo</h1>
+            <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
+                Aquí encontrarás todas nuestras creaciones. Desde galletas clásicas hasta combos especiales para
+                regalar.
+            </p>
+        </div>
+
+        <!-- Section: Productos Individuales -->
+        <div id="productos" class="section-separator">
+            <h2 class="section-title-cat">Galletas Artesanales</h2>
+        </div>
+
+        <div class="products-grid">
+            <!-- Mantequilla -->
+            <div class="product-card">
+                <img src="assets/images/galletas-mantequilla.webp" alt="Galletas de Mantequilla" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Mantequilla</h3>
+                    <p class="product-description">Crujientes y decoradas con punto de fruta.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.000</div>
+                        <a href="productos/galletas-mantequilla.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ChocoChips -->
+            <div class="product-card">
+                <img src="assets/images/galletas-toping1.webp" alt="Galletas ChocoChips" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">ChocoChips</h3>
+                    <p class="product-description">Con trozos de chocolate semiamargo.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="productos/galletas-chocochips.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fiesta -->
+            <div class="product-card">
+                <img src="assets/images/galletas-toping2.webp" alt="Galletas Fiesta" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Fiesta</h3>
+                    <p class="product-description">Coloridas con toping de chocolate.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="productos/galletas-fiesta.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alfajores -->
+            <div class="product-card">
+                <img src="assets/images/alfajores.webp" alt="Alfajores Caseros" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Alfajores</h3>
+                    <p class="product-description">Rellenos de arequipe y azúcar glass.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="productos/alfajores.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Alfajores Corazon -->
+            <div class="product-card">
+                <img src="assets/images/alfajores-corazon.webp" alt="Alfajores Corazón" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Corazón</h3>
+                    <p class="product-description">Alfajores con forma romántica.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.500</div>
+                        <a href="productos/alfajores-corazon.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bigote -->
+            <div class="product-card">
+                <img src="assets/images/galletas-bigote.webp" alt="Galletas Bigote" class="product-image"
+                    loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Bigote</h3>
+                    <p class="product-description">Divertidas y con chocolate.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$3.000</div>
+                        <a href="productos/galletas-bigote.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section: Combos -->
+        <div id="combos" class="section-separator">
+            <h2 class="section-title-cat">Combos & Regalos</h2>
+        </div>
+
+        <div class="products-grid">
+            <!-- Combo Deleite -->
+            <div class="product-card">
+                <img src="assets/images/combo-deleite.webp" alt="Combo Deleite" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Combo Deleite</h3>
+                    <p class="product-description">La mezcla perfecta de sabores clásicos.</p>
+                    <ul class="combo-features" style="font-size: 0.9rem; text-align: left; margin: 1rem 0;">
+                        <li>• 4 Galletas Chips</li>
+                        <li>• 4 Galletas Mantequilla</li>
+                        <li>• 2 Alfajores</li>
+                    </ul>
+                    <div class="product-price">
+                        <div class="price-tag">$12.000</div>
+                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Deleite"
+                            class="btn btn-primary btn-small" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Dulce -->
+            <div class="product-card">
+                <img src="assets/images/combo-dulce.webp" alt="Combo Dulce" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Combo Dulce</h3>
+                    <p class="product-description">Para compartir en pareja.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$18.000</div>
+                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Dulce"
+                            class="btn btn-primary btn-small" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Combo Premium -->
+            <div class="product-card">
+                <img src="assets/images/combo-premium2.webp" alt="Combo Premium" class="product-image" loading="lazy">
+                <div class="product-info">
+                    <h3 class="product-name">Combo Premium</h3>
+                    <p class="product-description">La experiencia completa de Misajo.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$25.000</div>
+                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Premium"
+                            class="btn btn-primary btn-small" target="_blank">Pedir Ahora</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <misajo-footer></misajo-footer>
+    <script src="assets/js/main.js" defer></script>
+</body>
+
+</html>
