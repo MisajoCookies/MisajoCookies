@@ -50,8 +50,8 @@ class MisajoHeader extends HTMLElement {
                         <li style="--i:4"><a href="${contactoHref}">Contacto</a></li>
                     </ul>
                     <div class="mobile-socials" style="--i:5">
-                        <a href="https://instagram.com/misajocookie" target="_blank">Instagram</a>
-                        <a href="https://wa.me/573159038449" target="_blank">WhatsApp</a>
+                        <a href="https://instagram.com/misajocookie" target="_blank" rel="noopener noreferrer">Instagram</a>
+                        <a href="https://wa.me/573159038449" target="_blank" rel="noopener noreferrer">WhatsApp</a>
                     </div>
                 </div>
             </div>

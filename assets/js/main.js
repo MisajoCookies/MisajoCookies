@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function abrirWhatsApp(mensaje) {
         const telefono = '573044866497';
         const url = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
-        window.open(url, '_blank');
+        window.open(url, '_blank', 'noopener,noreferrer');
     }
 
     /**
