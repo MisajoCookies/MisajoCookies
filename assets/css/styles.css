@@ -1,6 +1,7 @@
 /* ========================================
    MISAJ COOKIE - ESTILOS PRINCIPALES
    ======================================== */
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
 /* Variables CSS - NUEVOS COLORES */
 :root {
@@ -17,7 +18,7 @@
     --color-text: #2C1810;
     --color-text-light: #4A3228;
     /* darkened for WCAG AA contrast */
-    --font-display: 'Shrikhand', serif;
+    --font-display: 'Corben', cursive;
     --font-body: 'Montserrat', sans-serif;
 }
 
