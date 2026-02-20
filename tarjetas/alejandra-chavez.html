@@ -94,19 +94,20 @@
         }
 
         .avatar {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            background: linear-gradient(135deg, var(--accent), #A0612A);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            font-weight: 700;
-            color: var(--white);
             margin: 0 auto 1rem;
             box-shadow: 0 6px 20px rgba(201, 123, 62, .35);
+            overflow: hidden;
+            border: 3px solid rgba(201, 123, 62, .4);
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
         }
 
         .card-name {
@@ -405,7 +406,7 @@
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
                 <div class="logo-fallback" style="display:none">Misajo<span>Cookies</span></div>
             </div>
-            <div class="avatar">AC</div>
+            <div class="avatar"><img src="../assets/images/mascota.webp" alt="MisajoCookies Mascota"></div>
             <h1 class="card-name">Alejandra Chavez<br>Caicedo</h1>
             <span class="card-role">Presidenta</span>
         </div>
