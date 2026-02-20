@@ -15,9 +15,9 @@
     /* Fondo beige claro */
     --color-white: #FFFFFF;
     --color-text: #2C1810;
-    --color-text-light: #4A3228; /* darkened for WCAG AA contrast */
-    --font-display: 'Playfair Display', serif;
-    --font-elegant: 'Cormorant Garamond', serif;
+    --color-text-light: #4A3228;
+    /* darkened for WCAG AA contrast */
+    --font-display: 'Cooper Black', serif;
     --font-body: 'Montserrat', sans-serif;
 }
 
@@ -213,11 +213,11 @@ nav {
 }
 
 .hero-subtitle {
-    font-family: var(--font-elegant);
-    font-size: 1.3rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
     color: var(--color-accent);
     margin-bottom: 1rem;
-    font-weight: 300;
+    font-weight: 600;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -225,11 +225,11 @@ nav {
 .hero-title {
     font-family: var(--font-display);
     font-size: 4.5rem;
-    font-weight: 900;
+    font-weight: 400;
     color: var(--color-text);
     line-height: 1.1;
     margin-bottom: 1.5rem;
-    letter-spacing: -2px;
+    letter-spacing: 0;
 }
 
 .hero-title .highlight {
@@ -238,7 +238,8 @@ nav {
 }
 
 .hero-description {
-    font-size: 1.2rem;
+    font-family: var(--font-body);
+    font-size: 1.1rem;
     color: var(--color-text-light);
     line-height: 1.8;
     margin-bottom: 2.5rem;
@@ -417,21 +418,21 @@ section {
 }
 
 .section-subtitle {
-    font-family: var(--font-elegant);
-    font-size: 1.1rem;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
     color: var(--color-accent);
     margin-bottom: 0.5rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-weight: 300;
+    font-weight: 600;
 }
 
 .section-title {
     font-family: var(--font-display);
-    font-size: 3.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 400;
     color: var(--color-text);
-    letter-spacing: -1px;
+    letter-spacing: 0;
 }
 
 /* ========================================
@@ -611,14 +612,17 @@ section {
 
 .about-content h2 {
     font-family: var(--font-display);
-    font-size: 3rem;
+    font-size: 2.6rem;
+    font-weight: 400;
     color: var(--color-text);
     margin-bottom: 1.5rem;
 }
 
 .about-content p {
-    font-size: 1.1rem;
-    line-height: 1.8;
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.9;
     color: var(--color-text-light);
     margin-bottom: 1.5rem;
 }
