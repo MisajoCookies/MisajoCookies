@@ -4,14 +4,9 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://MisajoCookies.github.io/MisajoCookies/sitemap.xml
-
-# Bloquear archivos innecesarios
-Disallow: /css/
-Disallow: /js/
+# Proteger archivos de control de versiones y documentación técnica
 Disallow: /.git/
 Disallow: /README.md
 
-# Permitir crawling de imágenes
-Allow: /images/
+# Sitemap
+Sitemap: https://MisajoCookies.github.io/MisajoCookies/sitemap.xml
