@@ -12,7 +12,8 @@ class MisajoFooter extends HTMLElement {
                     <a href="/catalogo.html" style="color: inherit; margin: 0 0.5rem;">Catálogo</a> |
                     <a href="/galletas-artesanales-cali.html" style="color: inherit; margin: 0 0.5rem;">Galletas Artesanales en Cali</a> |
                     <a href="/domicilios-cali.html" style="color: inherit; margin: 0 0.5rem;">Domicilios</a> |
-                    <a href="/contacto.html" style="color: inherit; margin: 0 0.5rem;">Contacto</a>
+                    <a href="/contacto.html" style="color: inherit; margin: 0 0.5rem;">Contacto</a> |
+                    <a href="/nosotros.html" style="color: inherit; margin: 0 0.5rem;">Nosotros</a>
                 </nav>
                 <p>&copy; ${currentYear} <span itemprop="name">MisajoCookies</span>. Todos los derechos reservados. Hecho con ❤️ en <span
                         itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span

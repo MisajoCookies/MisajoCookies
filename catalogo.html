@@ -115,8 +115,19 @@
     <link rel="stylesheet" href="assets/css/styles.css">
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/mascota.webp" type="image/webp">
+    <link rel="icon" type="image/webp" href="/assets/images/mascota.webp">
+    <link rel="apple-touch-icon" href="/assets/images/mascota.webp">
 
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://www.misajocookies.com/"},
+        {"@type": "ListItem", "position": 2, "name": "Catálogo", "item": "https://www.misajocookies.com/catalogo.html"}
+      ]
+    }
+    </script>
     <!-- Scripts -->
     <script src="assets/js/components/misajo-header.js" defer></script>
     <script src="assets/js/components/misajo-footer.js" defer></script>
@@ -129,8 +140,7 @@
         <div class="page-header">
             <h1 class="page-title">Catálogo de Galletas Artesanales – MisajoCookies Cali</h1>
             <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto;">
-                Aquí encontrarás todas nuestras creaciones. Desde galletas clásicas hasta combos especiales para
-                regalar.
+                Aquí encontrarás <strong>todo lo que hacemos</strong>: galletas artesanales individuales y combos de regalo para Cali. Explora las dos categorías, elige tus favoritas y pídelas por WhatsApp con entrega a domicilio.
             </p>
         </div>
 
@@ -138,15 +148,16 @@
         <div id="productos" class="section-separator">
             <h2 class="section-title-cat">Galletas Artesanales</h2>
         </div>
+        <p style="text-align:center; max-width:700px; margin: 0 auto 2rem auto; color:#555; font-size:1rem;">Elaboradas a mano en Cali con ingredientes reales y sin conservantes artificiales. Haz clic en "Ver Detalles" para conocer ingredientes, presentación y usos ideales de cada variedad.</p>
 
         <div class="products-grid">
             <!-- Mantequilla -->
             <div class="product-card">
-                <img src="assets/images/galletas-mantequilla.webp" alt="Galletas de Mantequilla" class="product-image"
-                    loading="lazy">
+                <img src="assets/images/galletas-mantequilla.webp" alt="Galletas de Mantequilla artesanales con decoración de fruta MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Mantequilla</h3>
-                    <p class="product-description">Crujientes y decoradas con punto de fruta.</p>
+                    <p class="product-description">Galleta de mantequilla real, crujiente y decorada a mano con punto de fruta.</p>
                     <div class="product-price">
                         <div class="price-tag">$3.000</div>
                         <a href="productos/galletas-mantequilla.html" class="btn btn-primary btn-small">Ver Detalles</a>
@@ -156,11 +167,11 @@
 
             <!-- ChocoChips -->
             <div class="product-card">
-                <img src="assets/images/galletas-toping1.webp" alt="Galletas ChocoChips" class="product-image"
-                    loading="lazy">
+                <img src="assets/images/galletas-toping1.webp" alt="Galletas ChocoChips con chocolate semiamargo artesanal MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">ChocoChips</h3>
-                    <p class="product-description">Con trozos de chocolate semiamargo.</p>
+                    <p class="product-description">Con generosos trozos de chocolate semiamargo real en cada bocado.</p>
                     <div class="product-price">
                         <div class="price-tag">$3.500</div>
                         <a href="productos/galletas-chocochips.html" class="btn btn-primary btn-small">Ver Detalles</a>
@@ -170,11 +181,11 @@
 
             <!-- Fiesta -->
             <div class="product-card">
-                <img src="assets/images/galletas-toping2.webp" alt="Galletas Fiesta" class="product-image"
-                    loading="lazy">
+                <img src="assets/images/galletas-toping2.webp" alt="Galletas Fiesta con toping colorido decoradas a mano MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Fiesta</h3>
-                    <p class="product-description">Coloridas con toping de chocolate.</p>
+                    <p class="product-description">Colorida y alegre, decorada con grageas multicolores. Ideal para celebraciones.</p>
                     <div class="product-price">
                         <div class="price-tag">$3.500</div>
                         <a href="productos/galletas-fiesta.html" class="btn btn-primary btn-small">Ver Detalles</a>
@@ -184,10 +195,10 @@
 
             <!-- Alfajores -->
             <div class="product-card">
-                <img src="assets/images/alfajores.webp" alt="Alfajores Caseros" class="product-image" loading="lazy">
+                <img src="assets/images/alfajores.webp" alt="Alfajores de Arequipe artesanales espolvoreados con azúcar glass MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Alfajores</h3>
-                    <p class="product-description">Rellenos de arequipe y azúcar glass.</p>
+                    <p class="product-description">Suaves galletas de maicena rellenas de arequipe casero. Textura que se deshace en la boca.</p>
                     <div class="product-price">
                         <div class="price-tag">$3.500</div>
                         <a href="productos/alfajores.html" class="btn btn-primary btn-small">Ver Detalles</a>
@@ -197,11 +208,11 @@
 
             <!-- Alfajores Corazon -->
             <div class="product-card">
-                <img src="assets/images/alfajores-corazon.webp" alt="Alfajores Corazón" class="product-image"
-                    loading="lazy">
+                <img src="assets/images/alfajores-corazon.webp" alt="Alfajores Corazón rellenos de arequipe casero para regalar MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Corazón</h3>
-                    <p class="product-description">Alfajores con forma romántica.</p>
+                    <p class="product-description">Alfajor de arequipe con forma de corazón. El detalle romántico perfecto para regalar.</p>
                     <div class="product-price">
                         <div class="price-tag">$3.500</div>
                         <a href="productos/alfajores-corazon.html" class="btn btn-primary btn-small">Ver Detalles</a>
@@ -211,11 +222,11 @@
 
             <!-- Bigote -->
             <div class="product-card">
-                <img src="assets/images/galletas-bigote.webp" alt="Galletas Bigote" class="product-image"
-                    loading="lazy">
+                <img src="assets/images/galletas-bigote.webp" alt="Galletas Bigote con chocolate oscuro artesanales MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Bigote</h3>
-                    <p class="product-description">Divertidas y con chocolate.</p>
+                    <p class="product-description">Galleta de mantequilla con cobertura de chocolate y diseño en bigote. Para photocalls y eventos.</p>
                     <div class="product-price">
                         <div class="price-tag">$3.000</div>
                         <a href="productos/galletas-bigote.html" class="btn btn-primary btn-small">Ver Detalles</a>
@@ -228,11 +239,12 @@
         <div id="combos" class="section-separator">
             <h2 class="section-title-cat">Combos & Regalos</h2>
         </div>
+        <p style="text-align:center; max-width:700px; margin: 0 auto 2rem auto; color:#555; font-size:1rem;">Nuestros combos reúnen varias galletas artesanales en presentación especial para regalar. Perfectos para cumpleaños, aniversarios y eventos en Cali.</p>
 
         <div class="products-grid">
             <!-- Combo Deleite -->
             <div class="product-card">
-                <img src="assets/images/combo-deleite.webp" alt="Combo Deleite" class="product-image" loading="lazy">
+                <img src="assets/images/combo-deleite.webp" alt="Combo Deleite galletas artesanales para regalo MisajoCookies Cali" class="product-image" loading="lazy" width="1184" height="864">
                 <div class="product-info">
                     <h3 class="product-name">Combo Deleite</h3>
                     <p class="product-description">La mezcla perfecta de sabores clásicos.</p>
@@ -251,7 +263,7 @@
 
             <!-- Combo Dulce -->
             <div class="product-card">
-                <img src="assets/images/combo-dulce.webp" alt="Combo Dulce" class="product-image" loading="lazy">
+                <img src="assets/images/combo-dulce.webp" alt="Combo Dulce galletas artesanales para compartir en pareja MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Combo Dulce</h3>
                     <p class="product-description">Para compartir en pareja.</p>
@@ -265,7 +277,7 @@
 
             <!-- Combo Premium -->
             <div class="product-card">
-                <img src="assets/images/combo-premium2.webp" alt="Combo Premium" class="product-image" loading="lazy">
+                <img src="assets/images/combo-premium2.webp" alt="Combo Premium caja de galletas artesanales regalo especial MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Combo Premium</h3>
                     <p class="product-description">La experiencia completa de Misajo.</p>
