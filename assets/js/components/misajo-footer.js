@@ -7,6 +7,13 @@ class MisajoFooter extends HTMLElement {
         const currentYear = new Date().getFullYear();
         this.innerHTML = `
             <footer itemscope itemtype="https://schema.org/WPFooter">
+                <nav aria-label="Navegación del pie de página" style="margin-bottom: 1rem; font-size: 0.9rem;">
+                    <a href="/" style="color: inherit; margin: 0 0.5rem;">Inicio</a> |
+                    <a href="/catalogo.html" style="color: inherit; margin: 0 0.5rem;">Catálogo</a> |
+                    <a href="/galletas-artesanales-cali.html" style="color: inherit; margin: 0 0.5rem;">Galletas Artesanales en Cali</a> |
+                    <a href="/domicilios-cali.html" style="color: inherit; margin: 0 0.5rem;">Domicilios</a> |
+                    <a href="/contacto.html" style="color: inherit; margin: 0 0.5rem;">Contacto</a>
+                </nav>
                 <p>&copy; ${currentYear} <span itemprop="name">MisajoCookies</span>. Todos los derechos reservados. Hecho con ❤️ en <span
                         itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span
                             itemprop="addressLocality">Cali</span>, <span itemprop="addressCountry">Colombia</span></span>.</p>

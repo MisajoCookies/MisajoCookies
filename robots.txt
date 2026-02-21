@@ -1,5 +1,5 @@
 # robots.txt para MisajoCookies
-# Sitio: https://MisajoCookies.github.io/MisajoCookies/
+# Sitio: https://www.misajocookies.com/
 
 User-agent: *
 Allow: /
@@ -9,4 +9,4 @@ Disallow: /.git/
 Disallow: /README.md
 
 # Sitemap
-Sitemap: https://MisajoCookies.github.io/MisajoCookies/sitemap.xml
+Sitemap: https://www.misajocookies.com/sitemap.xml

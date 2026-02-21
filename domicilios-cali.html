@@ -7,10 +7,10 @@
 
     <!-- Security Headers -->
     <meta name="referrer" content="strict-origin-when-cross-origin">
-    <title>Domicilios en Cali | MisajoCookies</title>
+    <title>Domicilios de Galletas Artesanales en Cali | MisajoCookies</title>
     <meta name="description"
-        content="Cobertura de domicilios de MisajoCookies en Cali. Llegamos al Norte, Sur, Oeste y Oriente. Consulta tarifas.">
-    <link rel="canonical" href="https://misajocookies.github.io/misajocookies/domicilios-cali.html" />
+        content="Enviamos galletas artesanales a domicilio en toda Cali. Zona Sur, Norte, Oeste y Centro. Lunes a Sábado de 2 PM a 6 PM. Pide por WhatsApp con 24 horas de anticipación.">
+    <link rel="canonical" href="https://www.misajocookies.com/domicilios-cali.html" />
 
     <style>
         :root {
@@ -64,6 +64,75 @@
             content: '🚚';
             margin-right: 10px;
         }
+
+        h2 {
+            font-family: var(--font-display);
+            color: var(--color-primary);
+            font-size: 1.5rem;
+            margin-top: 0;
+        }
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #555;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            counter-reset: steps;
+        }
+
+        .steps-list li {
+            counter-increment: steps;
+            padding: 0.75rem 0 0.75rem 3rem;
+            position: relative;
+            border-bottom: 1px solid #eee;
+        }
+
+        .steps-list li::before {
+            content: counter(steps);
+            background: var(--color-accent);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.85rem;
+            position: absolute;
+            left: 0;
+            top: 0.75rem;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            color: var(--color-primary);
+            margin-bottom: 0.4rem;
+        }
+
+        .cta-center {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .cta-center .btn {
+            margin: 0.5rem;
+        }
     </style>
 
     <!-- Favicon -->
@@ -76,28 +145,76 @@
 <body>
     <misajo-header></misajo-header>
     <main>
-        <h1>Cobertura de Domicilios</h1>
+        <h1>Domicilios de Galletas Artesanales en Cali</h1>
+        <p class="intro-text">
+            ¿Quieres recibir galletas artesanales frescas sin salir de casa? Llevamos nuestras
+            MisajoCookies a toda la ciudad de Cali. Rápido, sencillo y con el mismo sabor casero
+            que nos caracteriza.
+        </p>
 
         <div class="info-card">
-            <h2>Zonas de Entrega</h2>
-            <p>Llevamos tus galletas a toda la ciudad de Cali. Dependiendo de tu ubicación, el tiempo de entrega puede
-                variar.</p>
+            <h2>Zonas de Cobertura en Cali</h2>
+            <p>Hacemos domicilios a toda la ciudad. A continuación te mostramos las zonas y algunos
+                de los barrios que atendemos:</p>
             <ul>
-                <li>Zona Sur (Pance, Ciudad Jardín, Caney)</li>
-                <li>Zona Norte (Versalles, Chipichape, Flora)</li>
-                <li>Zona Oeste (Peñón, San Antonio)</li>
-                <li>Zona Centro y Oriente</li>
+                <li><strong>Zona Sur</strong> — Pance, Ciudad Jardín, Caney, Quintas de Don Simón, El Ingenio</li>
+                <li><strong>Zona Norte</strong> — Versalles, Chipichape, Flora Industrial, Pasoancho, Calima</li>
+                <li><strong>Zona Oeste</strong> — El Peñón, San Antonio, Granada, Ciudad Córdoba</li>
+                <li><strong>Zona Centro y Oriente</strong> — Centro histórico, Alameda, Floralia, Siloé</li>
             </ul>
+            <p>¿No ves tu barrio? Escríbenos por WhatsApp y verificamos cobertura para tu ubicación.</p>
         </div>
 
         <div class="info-card">
             <h2>Horarios de Entrega</h2>
-            <p>Realizamos entregas de Lunes a Sábado de 2:00 PM a 6:00 PM. Los pedidos deben realizarse con al menos 24
-                horas de anticipación.</p>
+            <p>Realizamos entregas de <strong>Lunes a Sábado de 2:00 PM a 6:00 PM</strong>. Los pedidos
+                deben realizarse con al menos <strong>24 horas de anticipación</strong> para garantizar
+                la frescura de tus galletas.</p>
+            <p>Para pedidos especiales o eventos, contáctanos con más tiempo de anticipación y
+                coordinamos la entrega según tu necesidad.</p>
         </div>
 
-        <div style="text-align: center;">
-            <a href="productos/index.html" class="btn btn-primary">Hacer un Pedido</a>
+        <div class="info-card">
+            <h2>¿Cómo Hacer tu Pedido a Domicilio?</h2>
+            <ol class="steps-list">
+                <li>Revisa nuestro <a href="productos/index.html">catálogo de galletas artesanales</a> y elige tus favoritas.</li>
+                <li>Escríbenos por <a href="https://wa.me/573159038449" target="_blank" rel="noopener noreferrer">WhatsApp al 315 903 8449</a> con tu pedido y dirección.</li>
+                <li>Confirmamos disponibilidad y acordamos la fecha y hora de entrega.</li>
+                <li>Realizas el pago por transferencia o efectivo al momento de la entrega.</li>
+                <li>Recibe tus galletas frescas y empacadas con amor directo en tu puerta.</li>
+            </ol>
+        </div>
+
+        <div class="info-card">
+            <h2>Preguntas Frecuentes sobre Domicilios</h2>
+            <div class="faq-item">
+                <strong>¿Cuánto cuesta el domicilio?</strong>
+                El costo de envío varía según la zona. Consúltanos por WhatsApp con tu dirección y te
+                indicamos el valor exacto antes de confirmar el pedido.
+            </div>
+            <div class="faq-item">
+                <strong>¿Hay pedido mínimo para domicilio?</strong>
+                Sí, manejamos un mínimo de pedido para garantizar que el envío sea viable. Escríbenos
+                y te asesoramos con las opciones disponibles según tu presupuesto.
+            </div>
+            <div class="faq-item">
+                <strong>¿Las galletas llegan frescas?</strong>
+                Absolutamente. Preparamos las galletas el mismo día o el día anterior a la entrega.
+                Las empacamos en bolsas selladas que conservan su frescura y textura crujiente.
+            </div>
+            <div class="faq-item">
+                <strong>¿Hacen domicilios los domingos?</strong>
+                Por el momento operamos de Lunes a Sábado. Para fechas especiales como el Día de la
+                Madre o San Valentín, habilitamos entregas extraordinarias. Síguenos en Instagram
+                <a href="https://instagram.com/misajocookie" target="_blank" rel="noopener noreferrer">@misajocookie</a>
+                para estar al tanto.
+            </div>
+        </div>
+
+        <div class="cta-center">
+            <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20hacer%20un%20pedido%20a%20domicilio%20en%20Cali"
+                target="_blank" rel="noopener noreferrer" class="btn btn-primary">Pedir por WhatsApp</a>
+            <a href="productos/index.html" class="btn btn-secondary">Ver Catálogo</a>
         </div>
     </main>
     <misajo-footer></misajo-footer>
