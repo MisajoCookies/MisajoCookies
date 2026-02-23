@@ -18,6 +18,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
     <!-- QR Code library (vanilla-compatible, no dependencies) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
@@ -425,7 +426,8 @@
 
     <div class="card">
         <div class="card-header">
-            <div class="logo-wrap">
+            <div class="logo-wrap" style="display:flex; align-items:center; justify-content:center; gap:0.5rem;">
+                <img src="../assets/images/favicon/favicon-96x96.png" alt="" style="height:40px; width:auto; border-radius:6px; flex-shrink:0;" onerror="this.style.display='none'">
                 <img src="../assets/images/logo.webp" alt="MisajoCookies"
                     onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
                 <div class="logo-fallback" style="display:none">Misajo<span>Cookies</span></div>
@@ -439,7 +441,7 @@
             <ul class="contact-list">
                 <li class="contact-item">
                     <a href="tel:+573008578608">
-                        <div class="icon-wrap">📞</div>
+                        <div class="icon-wrap"><i class="fas fa-phone"></i></div>
                         <div>
                             <div class="contact-label">Teléfono</div>
                             <div class="contact-value">+57 300 857 8608</div>
@@ -449,7 +451,7 @@
                 <li class="contact-item">
                     <a href="https://www.linkedin.com/in/miguel-angel-zapata-ramirez" target="_blank"
                         rel="noopener noreferrer">
-                        <div class="icon-wrap">💼</div>
+                        <div class="icon-wrap"><i class="fab fa-linkedin-in"></i></div>
                         <div>
                             <div class="contact-label">LinkedIn</div>
                             <div class="contact-value">miguel-angel-zapata-ramirez</div>
@@ -458,9 +460,9 @@
                 </li>
                 <li class="contact-item">
                     <a href="https://www.misajocookies.com/" target="_blank" rel="noopener noreferrer">
-                        <div class="icon-wrap">🌐</div>
+                        <div class="icon-wrap"><i class="fas fa-globe"></i></div>
                         <div>
-                            <div class="contact-label">Sitio Web</div>
+                            <div class="contact-label">Tienda en Línea</div>
                             <div class="contact-value">misajocookies.com</div>
                         </div>
                     </a>
@@ -469,13 +471,12 @@
 
             <div class="btn-row three">
                 <a href="https://wa.me/573008578608" target="_blank" rel="noopener noreferrer"
-                    class="act-btn btn-whatsapp">💬 Chat</a>
-                <button class="act-btn btn-qr" onclick="openQR()">📱 QR</button>
-                <button class="act-btn btn-nfc hidden" id="nfc-btn" onclick="shareNFC()">📡 NFC</button>
-                <button class="act-btn btn-save" onclick="saveContact()">💾 Guardar</button>
+                    class="act-btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat</a>
+                <button class="act-btn btn-qr" onclick="openQR()"><i class="fas fa-qrcode"></i> QR</button>
+                <button class="act-btn btn-nfc hidden" id="nfc-btn" onclick="shareNFC()"><i class="fas fa-tower-broadcast"></i> NFC</button>
+                <button class="act-btn btn-save" onclick="saveContact()"><i class="fas fa-floppy-disk"></i> Guardar</button>
                 <a href="https://www.misajocookies.com/" target="_blank" rel="noopener noreferrer"
-                    class="act-btn btn-web">🍪
-                    Tienda</a>
+                    class="act-btn btn-web"><i class="fas fa-store"></i> Tienda</a>
             </div>
         </div>
 

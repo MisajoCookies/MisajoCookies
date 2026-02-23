@@ -14,6 +14,14 @@ class MisajoHeader extends HTMLElement {
         const nosotrosHref = isSubPage ? `${rootPath}index.html#nosotros` : '#nosotros';
         const contactoHref = isSubPage ? `${rootPath}index.html#contacto` : '#contacto';
 
+        // Inyectar Font Awesome si no está cargado
+        if (!document.querySelector('link[href*="font-awesome"]')) {
+            const fa = document.createElement('link');
+            fa.rel = 'stylesheet';
+            fa.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css';
+            document.head.appendChild(fa);
+        }
+
         this.innerHTML = `
             <header id="header">
                 <nav>
@@ -50,8 +58,9 @@ class MisajoHeader extends HTMLElement {
                         <li style="--i:4"><a href="${contactoHref}">Contacto</a></li>
                     </ul>
                     <div class="mobile-socials" style="--i:5">
-                        <a href="https://instagram.com/misajocookie" target="_blank" rel="noopener noreferrer">Instagram</a>
-                        <a href="https://wa.me/573159038449" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+                        <a href="https://instagram.com/misajocookie" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i> Instagram</a>
+                        <a href="https://wa.me/573159038449" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                        <a href="https://facebook.com/misajocookie" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
                     </div>
                 </div>
             </div>
