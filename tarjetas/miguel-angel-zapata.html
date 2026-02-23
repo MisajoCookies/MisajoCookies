@@ -19,8 +19,6 @@
         href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    <!-- QR Code library (vanilla-compatible, no dependencies) -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
     <style>
         *,
         *::before,
@@ -505,13 +503,12 @@
             document.getElementById('qr-modal').classList.add('open');
             document.getElementById('qr-url-text').textContent = CARD_URL;
             if (!qrGenerated) {
-                new QRCode(document.getElementById('qr-canvas'), {
-                    text: CARD_URL,
-                    width: 200, height: 200,
-                    colorDark: '#3D2B1F',
-                    colorLight: '#FFFFFF',
-                    correctLevel: QRCode.CorrectLevel.H
-                });
+                const img = document.createElement('img');
+                img.src = 'https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=' + encodeURIComponent(CARD_URL) + '&color=3D2B1F&bgcolor=FFFFFF&ecc=H';
+                img.alt = 'Código QR';
+                img.width = 200;
+                img.height = 200;
+                document.getElementById('qr-canvas').appendChild(img);
                 qrGenerated = true;
             }
         }
