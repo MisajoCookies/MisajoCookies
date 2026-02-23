@@ -168,7 +168,7 @@ nav {
     min-height: 90vh;
     background: linear-gradient(135deg, #F5F5DC 0%, #EAE8D5 100%);
     position: relative;
-    overflow: hidden;
+    overflow: visible;
     display: flex;
     align-items: center;
     padding: 4rem 2rem;
@@ -987,7 +987,7 @@ body.menu-open {
         height: 400px;
         margin: 0 auto;
         width: 100%;
-        max-width: 500px;
+        max-width: 600px;
     }
 
     .cta-buttons {
