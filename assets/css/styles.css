@@ -168,7 +168,7 @@ nav {
     min-height: 90vh;
     background: linear-gradient(135deg, #F5F5DC 0%, #EAE8D5 100%);
     position: relative;
-    overflow: visible;
+    overflow: hidden;
     display: flex;
     align-items: center;
     padding: 4rem 2rem;
@@ -340,7 +340,7 @@ nav {
     width: 280px;
     height: 280px;
     top: 0;
-    right: 150px;
+    right: 30px;
     animation: float 6s infinite ease-in-out;
     z-index: 3;
 }
@@ -348,8 +348,8 @@ nav {
 .cookie-2 {
     width: 250px;
     height: 250px;
-    bottom: 50px;
-    right: 0;
+    bottom: 30px;
+    right: 220px;
     animation: float 7s infinite ease-in-out 1s;
     z-index: 2;
 }
@@ -357,8 +357,8 @@ nav {
 .cookie-3 {
     width: 200px;
     height: 200px;
-    top: 180px;
-    left: 0;
+    top: 150px;
+    left: 30px;
     animation: float 8s infinite ease-in-out 2s;
     z-index: 1;
 }
