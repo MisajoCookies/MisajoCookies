@@ -1,7 +1,7 @@
 /* ========================================
    MISAJ COOKIE - ESTILOS PRINCIPALES
    ======================================== */
-@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@300;400;500;600&display=fallback');
 
 /* Variables CSS - NUEVOS COLORES */
 :root {
@@ -12,6 +12,8 @@
     /* Versión más oscura para gradientes */
     --color-accent: #E35336;
     /* Cookie - naranja/terracota */
+    --color-accent-dark: #B53D20;
+    /* Versión oscura del acento para pasar WCAG AA (4.5:1) sobre fondos claros */
     --color-cream: #F5F5DC;
     /* Fondo beige claro */
     --color-white: #FFFFFF;
@@ -170,6 +172,7 @@ nav {
 .hero {
     margin-top: 80px;
     min-height: 90vh;
+    min-height: 90svh;
     background: linear-gradient(135deg, #F5F5DC 0%, #EAE8D5 100%);
     position: relative;
     overflow: hidden;
@@ -295,8 +298,8 @@ nav {
 
 .btn-secondary {
     background: transparent;
-    color: var(--color-accent);
-    border: 2px solid var(--color-accent);
+    color: var(--color-accent-dark);
+    border: 2px solid var(--color-accent-dark);
 }
 
 .btn-secondary:hover {
@@ -425,7 +428,7 @@ section {
 .section-subtitle {
     font-family: var(--font-body);
     font-size: 0.85rem;
-    color: var(--color-accent);
+    color: var(--color-accent-dark);
     margin-bottom: 0.5rem;
     letter-spacing: 3px;
     text-transform: uppercase;

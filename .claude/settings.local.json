@@ -1,5 +1,30 @@
 {
   "permissions": {
+    "allow": [
+      "WebFetch(domain:pagespeed.web.dev)",
+      "WebFetch(domain:www.googleapis.com)",
+      "Bash(magick identify:*)",
+      "Bash(ffprobe:*)",
+      "Bash(node:*)",
+      "Read(//c/Program Files/**)",
+      "Bash(xxd:*)",
+      "Bash(# Read WebP dimensions for hero-cookie-1 to verify my reading is correct xxd \"\"c:/Users/Admin/Desktop/MisajoCookies/assets/images/hero-cookie-1.webp\"\")",
+      "Read(//c/ProgramData/chocolatey/bin//**)",
+      "Read(//c/Users/Admin/AppData/Roaming/npm//**)",
+      "Read(//c/Users/Admin/AppData/Local/Programs/**)",
+      "Bash(cmd /c \"node --version\")",
+      "Bash(cmd /c \"where node\")",
+      "Bash(cmd /c \"npx --version\")",
+      "Bash(cmd /c \"where npx\")",
+      "Bash(\"/c/Users/Admin/AppData/Roaming/npm/node_modules/.bin/npx\" --version)",
+      "Read(//c/Users/Admin/.pyenv/pyenv-win/**)",
+      "Bash(\"/c/Users/Admin/.pyenv/pyenv-win/shims/python\" --version)",
+      "Bash(pyenv which:*)",
+      "Bash(\"/c/ProgramData/chocolatey/bin/choco\" --version)",
+      "Read(//c/Users/Admin/AppData/Local/Packages/**)",
+      "Bash(\"/c/ProgramData/chocolatey/bin/choco\" install webp --yes --no-progress)",
+      "Bash(\"/c/Users/Admin/AppData/Roaming/npm/npm.cmd\" --version)"
+    ],
     "additionalDirectories": [
       "C:\\Users\\Admin\\Desktop\\favicon"
     ]

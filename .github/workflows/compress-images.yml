@@ -1,0 +1,67 @@
+name: Comprimir Imágenes WebP
+
+# Se ejecuta manualmente O cuando se suben imágenes nuevas
+on:
+  workflow_dispatch:   # Ejecución manual desde GitHub Actions tab
+  push:
+    branches: [main]
+    paths:
+      - 'assets/images/**.webp'
+      - 'assets/images/**.jpg'
+      - 'assets/images/**.jpeg'
+      - 'assets/images/**.png'
+
+jobs:
+  compress:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar herramientas WebP
+        run: sudo apt-get install -y webp
+
+      - name: Comprimir imágenes WebP
+        run: |
+          QUALITY=75
+          CHANGED=0
+
+          for img in assets/images/*.webp; do
+            [ -f "$img" ] || continue
+
+            orig_size=$(stat -c%s "$img")
+            name=$(basename "$img" .webp)
+
+            # Decodificar a PNG y recomprimir con calidad menor
+            dwebp "$img" -o "/tmp/${name}.png" -quiet 2>/dev/null
+            cwebp -q $QUALITY "/tmp/${name}.png" -o "/tmp/${name}.webp" -quiet 2>/dev/null
+
+            if [ -f "/tmp/${name}.webp" ]; then
+              new_size=$(stat -c%s "/tmp/${name}.webp")
+              saved=$(( (orig_size - new_size) / 1024 ))
+
+              if [ "$new_size" -lt "$orig_size" ]; then
+                cp "/tmp/${name}.webp" "$img"
+                echo "✓ $img: ${orig_size} → ${new_size} bytes (ahorro: ${saved} KB)"
+                CHANGED=1
+              else
+                echo "- $img: ya está optimizado"
+              fi
+
+              rm -f "/tmp/${name}.png" "/tmp/${name}.webp"
+            fi
+          done
+
+          echo "CHANGED=$CHANGED" >> $GITHUB_ENV
+
+      - name: Commit imágenes comprimidas
+        if: env.CHANGED == '1'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add assets/images/*.webp
+          git diff --staged --quiet || git commit -m "perf: comprimir imágenes WebP (calidad 75%) [skip ci]"
+          git push
