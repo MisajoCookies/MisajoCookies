@@ -113,6 +113,7 @@
     </style>
 
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/slider.css">
 
     <!-- Favicon -->
     <!-- Favicon -->
@@ -162,36 +163,39 @@
                     <h3 class="product-name">Mantequilla</h3>
                     <p class="product-description">Galleta de mantequilla real, crujiente y decorada a mano con punto de fruta.</p>
                     <div class="product-price">
-                        <div class="price-tag">$3.000</div>
+                        <div class="price-tag">$4.000</div>
                         <a href="productos/galletas-mantequilla.html" class="btn btn-primary btn-small">Ver Detalles</a>
                     </div>
                 </div>
             </div>
 
-            <!-- ChocoChips -->
+            <!-- Topping -->
             <div class="product-card">
-                <img src="assets/images/galletas-toping1.webp" alt="Galletas ChocoChips con chocolate semiamargo artesanal MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">ChocoChips</h3>
-                    <p class="product-description">Con generosos trozos de chocolate semiamargo real en cada bocado.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$3.500</div>
-                        <a href="productos/galletas-chocochips.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img class="slide-image" src="assets/images/galletas-toping1.webp"
+                            alt="Galletas Topping artesanales - Foto 1" width="1200" height="900" />
+                        <div class="overlay"></div>
                     </div>
+                    <div class="slide">
+                        <img class="slide-image" src="assets/images/galletas-toping2.webp"
+                            alt="Galletas Topping artesanales - Foto 2" width="1200" height="900" />
+                        <div class="overlay"></div>
+                    </div>
+                    <button class="nav-btn prev" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button class="nav-btn next" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24"><path d="m9 18 6-6 6-6" /></svg>
+                    </button>
+                    <div class="dots-container"></div>
                 </div>
-            </div>
-
-            <!-- Fiesta -->
-            <div class="product-card">
-                <img src="assets/images/galletas-toping2.webp" alt="Galletas Fiesta con toping colorido decoradas a mano MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
                 <div class="product-info">
-                    <h3 class="product-name">Fiesta</h3>
-                    <p class="product-description">Colorida y alegre, decorada con grageas multicolores. Ideal para celebraciones.</p>
+                    <h3 class="product-name">Galletas Topping</h3>
+                    <p class="product-description">Chocolate negro, blanco, gemas de cacao o grajeas de temporada sobre base crocante artesanal.</p>
                     <div class="product-price">
-                        <div class="price-tag">$3.500</div>
-                        <a href="productos/galletas-fiesta.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                        <div class="price-tag">$4.000</div>
+                        <a href="productos/galletas-chocochips.html" class="btn btn-primary btn-small">Ver Detalles</a>
                     </div>
                 </div>
             </div>
@@ -203,36 +207,64 @@
                     <h3 class="product-name">Alfajores</h3>
                     <p class="product-description">Suaves galletas de maicena rellenas de arequipe casero. Textura que se deshace en la boca.</p>
                     <div class="product-price">
-                        <div class="price-tag">$3.500</div>
+                        <div class="price-tag">$4.000</div>
                         <a href="productos/alfajores.html" class="btn btn-primary btn-small">Ver Detalles</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Alfajores Corazon -->
+            <!-- Alfajores Corazon de Fresa -->
             <div class="product-card">
-                <img src="assets/images/alfajores-corazon.webp" alt="Alfajores Corazón rellenos de arequipe casero para regalar MisajoCookies Cali" class="product-image"
+                <img src="assets/images/alfajores-corazon.webp" alt="Alfajor Corazón de Fresa con mermelada de fresa premium y azúcar glass MisajoCookies Cali" class="product-image"
                     loading="lazy" width="1200" height="900">
                 <div class="product-info">
-                    <h3 class="product-name">Corazón</h3>
-                    <p class="product-description">Alfajor de arequipe con forma de corazón. El detalle romántico perfecto para regalar.</p>
+                    <h3 class="product-name">Alfajor Corazón de Fresa</h3>
+                    <p class="product-description">Corazón vibrante de mermelada de fresa premium y velo de azúcar glass. Distinción frutal artesanal.</p>
                     <div class="product-price">
-                        <div class="price-tag">$3.500</div>
+                        <div class="price-tag">$4.000</div>
                         <a href="productos/alfajores-corazon.html" class="btn btn-primary btn-small">Ver Detalles</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Bigote -->
+            <!-- Bigote de Limón -->
             <div class="product-card">
-                <img src="assets/images/galletas-bigote.webp" alt="Galletas Bigote con chocolate oscuro artesanales MisajoCookies Cali" class="product-image"
+                <img src="assets/images/galletas-bigote.webp" alt="Bigote de Limón galleta artesanal de vainilla con glaseado premium de limón MisajoCookies Cali" class="product-image"
                     loading="lazy" width="1200" height="900">
                 <div class="product-info">
-                    <h3 class="product-name">Bigote</h3>
-                    <p class="product-description">Galleta de mantequilla con cobertura de chocolate y diseño en bigote. Para photocalls y eventos.</p>
+                    <h3 class="product-name">Bigote de Limón</h3>
+                    <p class="product-description">Galleta artesanal de vainilla con glaseado premium de limón. Diseño icónico y esencia cítrica.</p>
                     <div class="product-price">
-                        <div class="price-tag">$3.000</div>
+                        <div class="price-tag">$4.000</div>
                         <a href="productos/galletas-bigote.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cookie Dip Premium -->
+            <div class="product-card">
+                <img src="assets/images/cookie-dip-premium.webp" alt="Cookie Dip Premium galletas artesanales con salsa gourmet MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
+                <div class="product-info">
+                    <h3 class="product-name">Cookie Dip Premium</h3>
+                    <p class="product-description">150g de galletas artesanales + 50g de salsa gourmet: ganache de chocolate, arequipe o ganache de frutas de temporada.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$15.000</div>
+                        <a href="productos/cookie-dip-premium.html" class="btn btn-primary btn-small">Ver Detalles</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cookie Shaker Supreme -->
+            <div class="product-card">
+                <img src="assets/images/cookie-shaker-supreme.webp" alt="Cookie Shaker Supreme vaso cúpula con galletas artesanales y ganache MisajoCookies Cali" class="product-image"
+                    loading="lazy" width="1200" height="900">
+                <div class="product-info">
+                    <h3 class="product-name">Cookie Shaker Supreme</h3>
+                    <p class="product-description">Vaso cúpula con 130g de galletas artesanales + 50g de ganache de chocolate o frutas de temporada. Destapa y disfruta.</p>
+                    <div class="product-price">
+                        <div class="price-tag">$12.000</div>
+                        <a href="productos/cookie-shaker-supreme.html" class="btn btn-primary btn-small">Ver Detalles</a>
                     </div>
                 </div>
             </div>
@@ -247,17 +279,12 @@
         <div class="products-grid">
             <!-- Combo Deleite -->
             <div class="product-card">
-                <img src="assets/images/combo-deleite.webp" alt="Combo Deleite galletas artesanales para regalo MisajoCookies Cali" class="product-image" loading="lazy" width="1184" height="864">
+                <img src="assets/images/combo-deleite.webp" alt="Combo Deleite galletas artesanales con café Juan Valdez o Té Hatsu MisajoCookies Cali" class="product-image" loading="lazy" width="1184" height="864">
                 <div class="product-info">
                     <h3 class="product-name">Combo Deleite</h3>
-                    <p class="product-description">La mezcla perfecta de sabores clásicos.</p>
-                    <ul class="combo-features" style="font-size: 0.9rem; text-align: left; margin: 1rem 0;">
-                        <li>• 4 Galletas Chips</li>
-                        <li>• 4 Galletas Mantequilla</li>
-                        <li>• 2 Alfajores</li>
-                    </ul>
+                    <p class="product-description">La combinación perfecta para una pausa de lujo. Dos paquetes de galletas artesanales de libre elección (50gr c/u) con un Café Juan Valdez o un Té Hatsu (250ml).</p>
                     <div class="product-price">
-                        <div class="price-tag">$12.000</div>
+                        <div class="price-tag">$17.000</div>
                         <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Deleite"
                             class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Pedir Ahora</a>
                     </div>
@@ -266,12 +293,12 @@
 
             <!-- Combo Dulce -->
             <div class="product-card">
-                <img src="assets/images/combo-dulce.webp" alt="Combo Dulce galletas artesanales para compartir en pareja MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
+                <img src="assets/images/combo-dulce.webp" alt="Combo Dulce galletas artesanales con vela aromática MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
                 <div class="product-info">
                     <h3 class="product-name">Combo Dulce</h3>
-                    <p class="product-description">Para compartir en pareja.</p>
+                    <p class="product-description">Una experiencia para los cinco sentidos. Un paquete de galletas artesanales de libre elección (50gr) y una exclusiva vela aromática con esencia de galleta recién horneada.</p>
                     <div class="product-price">
-                        <div class="price-tag">$18.000</div>
+                        <div class="price-tag">$15.000</div>
                         <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Dulce"
                             class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Pedir Ahora</a>
                     </div>
@@ -279,11 +306,29 @@
             </div>
 
             <!-- Combo Premium -->
-            <div class="product-card">
-                <img src="assets/images/combo-premium2.webp" alt="Combo Premium caja de galletas artesanales regalo especial MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
+            <div class="product-card combo-card">
+                <div class="slider-container">
+                    <div class="slide active">
+                        <img class="slide-image" src="assets/images/combo-premium1.webp"
+                            alt="Combo Premium - Foto 1" width="1044" height="900" />
+                        <div class="overlay"></div>
+                    </div>
+                    <div class="slide">
+                        <img class="slide-image" src="assets/images/combo-premium2.webp"
+                            alt="Combo Premium - Foto 2" width="1200" height="874" />
+                        <div class="overlay"></div>
+                    </div>
+                    <button class="nav-btn prev" aria-label="Anterior">
+                        <svg viewBox="0 0 24 24"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button class="nav-btn next" aria-label="Siguiente">
+                        <svg viewBox="0 0 24 24"><path d="m9 18 6-6 6-6" /></svg>
+                    </button>
+                    <div class="dots-container"></div>
+                </div>
                 <div class="product-info">
                     <h3 class="product-name">Combo Premium</h3>
-                    <p class="product-description">La experiencia completa de Misajo.</p>
+                    <p class="product-description">La máxima expresión de un detalle gourmet. Dos paquetes de galletas artesanales (50gr c/u) maridadas con Jack Daniel's (50ml) o Jägermeister x2 (20ml c/u).</p>
                     <div class="product-price">
                         <div class="price-tag">$25.000</div>
                         <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Premium"
