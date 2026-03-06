@@ -127,10 +127,6 @@
     }
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderCatalog);
-  } else {
-    renderCatalog();
-  }
+  renderCatalog();
 
 })();

@@ -11,7 +11,7 @@ class MisajoHeader extends HTMLElement {
         const isHomePage = !isSubPage && (currentFilename === 'index.html' || currentFilename === '');
 
         const homeHref = isSubPage ? `${rootPath}index.html` : 'index.html';
-        const catalogoHref = `${rootPath}catalogo.html#productos`;
+        const catalogoHref = `${rootPath}catalogo.html`;
         const nosotrosHref = isHomePage ? '#nosotros' : `${rootPath}index.html#nosotros`;
         const contactoHref = isHomePage ? '#contacto' : `${rootPath}index.html#contacto`;
 
