@@ -5,14 +5,15 @@ class MisajoHeader extends HTMLElement {
 
     connectedCallback() {
         const path = window.location.pathname;
-        const isSubPage = path.includes('/productos/') || path.includes('/blog/') || path.includes('/combos/');
+        const isSubPage = path.includes('/productos/') || path.includes('/blog/') || path.includes('/combos/') || path.includes('/tarjetas/');
         const rootPath = isSubPage ? '../' : './';
+        const currentFilename = path.split('/').pop() || 'index.html';
+        const isHomePage = !isSubPage && (currentFilename === 'index.html' || currentFilename === '');
 
         const homeHref = isSubPage ? `${rootPath}index.html` : 'index.html';
         const catalogoHref = `${rootPath}catalogo.html#productos`;
-        // const combosHref = `${rootPath}catalogo.html#combos`; // Removed specific combos link
-        const nosotrosHref = isSubPage ? `${rootPath}index.html#nosotros` : '#nosotros';
-        const contactoHref = isSubPage ? `${rootPath}index.html#contacto` : '#contacto';
+        const nosotrosHref = isHomePage ? '#nosotros' : `${rootPath}index.html#nosotros`;
+        const contactoHref = isHomePage ? '#contacto' : `${rootPath}index.html#contacto`;
 
         this.innerHTML = `
             <header id="header">
@@ -90,7 +91,6 @@ class MisajoHeader extends HTMLElement {
         });
 
         // Highlight active link
-        const currentFilename = path.split('/').pop() || 'index.html';
         const allLinks = this.querySelectorAll('a');
 
         allLinks.forEach(link => {
