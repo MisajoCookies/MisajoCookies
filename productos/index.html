@@ -84,10 +84,13 @@
     </script>
     <!-- Favicon -->
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/images/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+    <link rel="icon" href="../assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+    <!-- Catálogo centralizado -->
+    <script src="../assets/js/catalog-data.js"></script>
+    <script src="../assets/js/catalog-render.js" defer></script>
     <!-- Scripts -->
     <script src="../assets/js/components/misajo-header.js" defer></script>
     <script src="../assets/js/components/misajo-footer.js" defer></script>
@@ -103,105 +106,10 @@
         </div>
         <p style="text-align:center; max-width:700px; margin: -1rem auto 2rem auto; color:#555; font-size:1rem;">Descubre cada variedad de galleta artesanal que elaboramos en Cali: masa de mantequilla, chocolate, alfajores de arequipe y más. Todas hechas a mano, sin conservantes y con ingredientes de primera calidad.</p>
 
-        <!-- Reusing the Grid Structure -->
-        <div class="products-grid">
-            <!-- Mantequilla -->
-            <div class="product-card">
-                <img src="../assets/images/galletas-mantequilla.webp" alt="Galletas de Mantequilla artesanales elaboradas con mantequilla real MisajoCookies Cali"
-                    class="product-image" loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Mantequilla</h3>
-                    <p class="product-description">Delicadas y crujientes. Elaboradas con mantequilla real y decoración artesanal.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$4.000</div>
-                        <a href="galletas-mantequilla.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Topping -->
-            <div class="product-card">
-                <img src="../assets/images/galletas-toping1.webp" alt="Galletas Topping artesanales con chocolate negro, blanco o grajeas de temporada MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Galletas Topping</h3>
-                    <p class="product-description">Chocolate negro, blanco, gemas de cacao o grajeas de temporada sobre base crocante artesanal.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$4.000</div>
-                        <a href="galletas-chocochips.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Alfajores -->
-            <div class="product-card">
-                <img src="../assets/images/alfajores.webp" alt="Alfajores de Arequipe casero artesanales con azúcar glass MisajoCookies Cali" class="product-image" loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Alfajores</h3>
-                    <p class="product-description">Maicena fina, arequipe casero espeso y azúcar glass. Se deshacen en la boca.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$4.000</div>
-                        <a href="alfajores.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Alfajores Corazon -->
-            <div class="product-card">
-                <img src="../assets/images/alfajores-corazon.webp" alt="Alfajor Corazón de Fresa con mermelada de fresa premium y azúcar glass MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Alfajor Corazón de Fresa</h3>
-                    <p class="product-description">Corazón vibrante de mermelada de fresa premium y velo de azúcar glass. Distinción frutal artesanal.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$4.000</div>
-                        <a href="alfajores-corazon.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Bigote de Limón -->
-            <div class="product-card">
-                <img src="../assets/images/galletas-bigote.webp" alt="Bigote de Limón galleta artesanal de vainilla con glaseado premium de limón MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Bigote de Limón</h3>
-                    <p class="product-description">Galleta artesanal de vainilla con glaseado premium de limón. Diseño icónico y esencia cítrica.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$4.000</div>
-                        <a href="galletas-bigote.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cookie Dip Premium -->
-            <div class="product-card">
-                <img src="../assets/images/cookie-dip-premium.webp" alt="Cookie Dip Premium galletas artesanales con salsa gourmet MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Cookie Dip Premium</h3>
-                    <p class="product-description">150g de galletas artesanales + 50g de salsa gourmet: ganache de chocolate, arequipe o ganache de frutas de temporada.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$15.000</div>
-                        <a href="cookie-dip-premium.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cookie Shaker Supreme -->
-            <div class="product-card">
-                <img src="../assets/images/cookie-shaker-supreme.webp" alt="Cookie Shaker Supreme vaso cúpula con galletas artesanales y ganache MisajoCookies Cali" class="product-image"
-                    loading="lazy" width="1200" height="900">
-                <div class="product-info">
-                    <h3 class="product-name">Cookie Shaker Supreme</h3>
-                    <p class="product-description">Vaso cúpula con 130g de galletas artesanales + 50g de ganache de chocolate o frutas de temporada. Destapa y disfruta.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$12.000</div>
-                        <a href="cookie-shaker-supreme.html" class="btn btn-primary btn-small">Ver Detalles</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="products-grid"
+             data-catalog="products"
+             data-action="detail"
+             data-heading="h3"></div>
     </main>
 
     <div style="text-align:center; margin: 2rem 2rem 3rem; padding: 2rem; background:white; border-radius:15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05);">

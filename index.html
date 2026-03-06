@@ -311,10 +311,10 @@
 
     <!-- Favicon -->
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/images/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+    <link rel="icon" href="assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="assets/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="assets/images/favicon/site.webmanifest">
 </head>
 
 <body>
@@ -381,100 +381,11 @@
                 <p class="section-subtitle">Nuestros Sabores</p>
                 <h2 class="section-title">Galletas Artesanales</h2>
             </div>
-            <div class="products-grid">
-                <!-- Producto 1: Galletas de Mantequilla -->
-                <div class="product-card">
-                    <img src="assets/images/galletas-mantequilla.webp"
-                        alt="Galletas de Mantequilla caseras - MisajoCookies Cali" class="product-image" width="400"
-                        height="300" loading="lazy" />
-                    <div class="product-info">
-                        <h3 class="product-name">Galletas de Mantequilla</h3>
-                        <p class="product-description">
-                            Simplicidad, herencia y sabor. Delicadas piezas artesanales con el aroma inconfundible de la mantequilla de alta calidad, acentuadas con un punto de glaseado de frutas. El equilibrio perfecto entre lo crujiente y lo suave en una presentación exclusiva.
-                        </p>
-                        <div class="product-price">
-                            <div>
-                                <div class="price-tag">$4.000</div>
-                                <div class="price-detail">Paquete x 50gr</div>
-                            </div>
-                            <a href="https://wa.me/573159038449?text=Hola!%20Me%20interesan%20las%20Galletas%20de%20Mantequilla"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
-                                Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 2: Galletas Toping -->
-                <div class="product-card">
-                    <div class="slider-container">
-                        <!-- Slides -->
-                        <div class="slide active">
-                            <img class="slide-image" src="assets/images/galletas-toping1.webp"
-                                alt="Galletas Toping - Foto 1" width="1200" height="583" />
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="slide">
-                            <img class="slide-image" src="assets/images/galletas-toping2.webp"
-                                alt="Galletas Toping - Foto 2" width="1200" height="583" />
-                            <div class="overlay"></div>
-                        </div>
-
-                        <!-- Controles -->
-                        <button class="nav-btn prev" aria-label="Anterior">
-                            <svg viewBox="0 0 24 24">
-                                <path d="m15 18-6-6 6-6" />
-                            </svg>
-                        </button>
-                        <button class="nav-btn next" aria-label="Siguiente">
-                            <svg viewBox="0 0 24 24">
-                                <path d="m9 18 6-6 6-6" />
-                            </svg>
-                        </button>
-
-                        <!-- Indicadores -->
-                        <div class="dots-container"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Galletas Topping</h3>
-                        <p class="product-description">
-                            Pureza artesanal y destellos de color. Desde la profundidad del chocolate negro y la suavidad del blanco, hasta el toque vibrante de nuestras gemas de cacao o la alegría festiva de las grajeas de temporada.
-                        </p>
-                        <div class="product-price">
-                            <div>
-                                <div class="price-tag">$4.000</div>
-                                <div class="price-detail">Paquete x 50gr</div>
-                            </div>
-                            <a href="https://wa.me/573159038449?text=Hola!%20Me%20interesan%20las%20Galletas%20Topping"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
-                                Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Producto 4: Alfajores -->
-                <div class="product-card">
-                    <img src="assets/images/alfajores.webp" alt="Alfajores con arequipe - MisajoCookies Cali"
-                        class="product-image" width="400" height="300" loading="lazy" />
-                    <div class="product-info">
-                        <h3 class="product-name">Alfajores</h3>
-                        <p class="product-description">
-                            La esencia de la repostería fina. Alfajores artesanales de suavidad inigualable, rellenos de arequipe artesanal y terminados con una sutil lluvia de azúcar glass. Pequeños tesoros gastronómicos que transforman un café en una experiencia de lujo.
-                        </p>
-                        <div class="product-price">
-                            <div>
-                                <div class="price-tag">$4.000</div>
-                                <div class="price-detail">Paquete x 50gr</div>
-                            </div>
-                            <a href="https://wa.me/573159038449?text=Hola!%20Me%20interesan%20los%20Alfajores"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
-                                Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="products-grid"
+                 data-catalog="products"
+                 data-ids="galletas-mantequilla,galletas-topping,alfajores"
+                 data-action="order"
+                 data-heading="h3"></div>
 
             <div style="text-align: center; text-align-last: center; margin-top: 3rem;">
                 <a href="catalogo.html#productos" class="btn btn-secondary">Ver Todos los Productos</a>
@@ -487,91 +398,10 @@
                 <p class="section-subtitle">Especiales</p>
                 <h2 class="section-title">Combos Especiales</h2>
             </div>
-            <div class="products-grid">
-                <!-- Combo 1: Premium -->
-                <div class="product-card combo-card">
-                    <div class="slider-container">
-                        <!-- Slides -->
-                        <div class="slide active">
-                            <img class="slide-image" src="assets/images/combo-premium1.webp"
-                                alt="Combo Premium - Foto 1" width="1044" height="900" />
-                            <div class="overlay"></div>
-                        </div>
-                        <div class="slide">
-                            <img class="slide-image" src="assets/images/combo-premium2.webp"
-                                alt="Combo Premium - Foto 2" width="1200" height="874" />
-                            <div class="overlay"></div>
-                        </div>
-
-                        <!-- Controles -->
-                        <button class="nav-btn prev" aria-label="Anterior">
-                            <svg viewBox="0 0 24 24">
-                                <path d="m15 18-6-6 6-6" />
-                            </svg>
-                        </button>
-                        <button class="nav-btn next" aria-label="Siguiente">
-                            <svg viewBox="0 0 24 24">
-                                <path d="m9 18 6-6 6-6" />
-                            </svg>
-                        </button>
-
-                        <!-- Indicadores -->
-                        <div class="dots-container"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Combo Premium</h3>
-                        <p class="product-description">
-                            La máxima expresión de un detalle gourmet. Dos paquetes de galletas artesanales (50gr c/u) maridadas con Jack Daniel's (50ml) o Jägermeister x2 (20ml c/u). Diseñado para celebraciones memorables.
-                        </p>
-                        <div class="product-price">
-                            <div class="price-tag">$25.000</div>
-                            <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20pedir%20el%20Combo%20Premium"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
-                                Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Combo 2: Dulce -->
-                <div class="product-card combo-card">
-                    <div class="slider-container">
-                        <!-- Slides -->
-                        <div class="slide active">
-                            <img class="slide-image" src="assets/images/combo-dulce.webp" alt="Combo Dulce - Foto 1" width="1044" height="900" />
-                            <div class="overlay"></div>
-                        </div>
-
-                        <!-- Controles -->
-                        <button class="nav-btn prev" aria-label="Anterior">
-                            <svg viewBox="0 0 24 24">
-                                <path d="m15 18-6-6 6-6" />
-                            </svg>
-                        </button>
-                        <button class="nav-btn next" aria-label="Siguiente">
-                            <svg viewBox="0 0 24 24">
-                                <path d="m9 18 6-6 6-6" />
-                            </svg>
-                        </button>
-
-                        <!-- Indicadores -->
-                        <div class="dots-container"></div>
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-name">Combo Dulce</h3>
-                        <p class="product-description">
-                            Una experiencia para los cinco sentidos. Un paquete de galletas artesanales de libre elección (50gr) y una exclusiva vela aromática con esencia de galleta recién horneada. El detalle perfecto para crear un ambiente cálido y sofisticado.
-                        </p>
-                        <div class="product-price">
-                            <div class="price-tag">$15.000</div>
-                            <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20pedir%20el%20Combo%20Dulce"
-                                target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-small">
-                                Pedir Ahora
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="products-grid"
+                 data-catalog="combos"
+                 data-action="order"
+                 data-heading="h3"></div>
 
             <div style="text-align: center; text-align-last: center; margin-top: 3rem;">
                 <a href="catalogo.html#combos" class="btn btn-secondary">Ver Todos los Combos</a>
@@ -700,6 +530,8 @@
     <misajo-footer></misajo-footer>
 
     <!-- JavaScript -->
+    <script src="assets/js/catalog-data.js"></script>
+    <script src="assets/js/catalog-render.js" defer></script>
     <script src="assets/js/main.js" defer></script>
 </body>
 

@@ -55,15 +55,24 @@
     </style>
 
     <link rel="stylesheet" href="../assets/css/styles.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="../assets/css/slider.css" media="print" onload="this.media='all'">
     <noscript>
         <link rel="stylesheet" href="../assets/css/styles.css">
+        <link rel="stylesheet" href="../assets/css/slider.css">
     </noscript>
+    <style>
+        /* Reserva altura para sliders (evita CLS) */
+        .combo-card .slider-container { height: 300px; overflow: hidden; }
+    </style>
 
     <!-- Favicon -->
-    <link rel="icon" href="/assets/images/favicon/favicon.ico" sizes="any">
-    <link rel="icon" href="/assets/images/favicon/favicon.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/assets/images/favicon/apple-touch-icon.png">
-    <link rel="manifest" href="/assets/images/favicon/site.webmanifest">
+    <link rel="icon" href="../assets/images/favicon/favicon.ico" sizes="any">
+    <link rel="icon" href="../assets/images/favicon/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.png">
+    <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+    <!-- Catálogo centralizado -->
+    <script src="../assets/js/catalog-data.js"></script>
+    <script src="../assets/js/catalog-render.js" defer></script>
     <script src="../assets/js/components/misajo-header.js" defer></script>
     <script src="../assets/js/components/misajo-footer.js" defer></script>
 </head>
@@ -77,50 +86,10 @@
             <p>La forma más dulce de decir "Te Quiero"</p>
         </div>
 
-        <div class="products-grid">
-            <!-- Combo Deleite -->
-            <div class="product-card">
-                <img src="../assets/images/combo-deleite.webp" alt="Combo Deleite galletas artesanales con café Juan Valdez o Té Hatsu MisajoCookies Cali" class="product-image" loading="lazy">
-                <div class="product-info">
-                    <h2 class="product-name">Combo Deleite</h2>
-                    <p class="product-description">La combinación perfecta para una pausa de lujo. Dos paquetes de galletas artesanales de libre elección (50gr c/u) acompañados de un Café Juan Valdez o un Té Hatsu (250ml). Tú eliges tus favoritos; nosotros ponemos la excelencia.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$17.000</div>
-                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Deleite"
-                            class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Pedir Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Combo Dulce -->
-            <div class="product-card">
-                <img src="../assets/images/combo-dulce.webp" alt="Combo Dulce galletas artesanales con vela aromática MisajoCookies Cali" class="product-image" loading="lazy">
-                <div class="product-info">
-                    <h2 class="product-name">Combo Dulce</h2>
-                    <p class="product-description">Una experiencia para los cinco sentidos. Un paquete de galletas artesanales de libre elección (50gr) y una exclusiva vela aromática con esencia de galleta recién horneada. El detalle perfecto para crear un ambiente cálido y sofisticado.<br><small>Personalización: Variedad de galletas y formas de vela según disponibilidad.</small></p>
-                    <div class="product-price">
-                        <div class="price-tag">$15.000</div>
-                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Dulce"
-                            class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Pedir Ahora</a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Combo Premium -->
-            <div class="product-card">
-                <img src="../assets/images/combo-premium2.webp" alt="Combo Premium galletas artesanales con licor Jack Daniel's o Jägermeister MisajoCookies Cali" class="product-image"
-                    loading="lazy">
-                <div class="product-info">
-                    <h2 class="product-name">Combo Premium</h2>
-                    <p class="product-description">La máxima expresión de un detalle gourmet. Dos paquetes de galletas artesanales (50gr c/u) maridadas con licor de prestigio. Elige entre la fuerza de un Jack Daniel's (50ml) o la intensidad de dos botellas de Jägermeister (20ml c/u). Diseñado para celebraciones memorables.</p>
-                    <div class="product-price">
-                        <div class="price-tag">$25.000</div>
-                        <a href="https://wa.me/573159038449?text=Hola!%20Quiero%20el%20Combo%20Premium"
-                            class="btn btn-primary btn-small" target="_blank" rel="noopener noreferrer">Pedir Ahora</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <div class="products-grid"
+             data-catalog="combos"
+             data-action="order"
+             data-heading="h2"></div>
     </main>
 
     <misajo-footer></misajo-footer>
