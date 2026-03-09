@@ -1,211 +1,232 @@
-# 🍪 Misaj Cookie - Website
+# MisajoCookies — Sitio Web Oficial
 
-## Estructura del Proyecto
+> Sitio web estático para una pastelería artesanal de galletas en Cali, Colombia.
+> Publicado en [www.misajocookies.com](https://www.misajocookies.com) vía GitHub Pages.
+
+---
+
+## Resumen Ejecutivo
+
+MisajoCookies es un negocio de galletas artesanales con sede en Cali, Colombia. Este repositorio contiene el **sitio web completo**: una aplicación web estática (sin backend) que funciona como vitrina digital, catálogo de productos y canal de ventas directo vía WhatsApp.
+
+El sitio está diseñado con tres prioridades en mente:
+
+1. **Conversión** — Cada página lleva al visitante a contactar por WhatsApp o ver el catálogo.
+2. **SEO local** — Optimizado para búsquedas como "galletas artesanales Cali" con schema markup, sitemap y metaetiquetas geo.
+3. **Rendimiento** — Imágenes comprimidas en WebP, CSS crítico inlinado y carga asíncrona de recursos.
+
+---
+
+## Stack Tecnológico
+
+| Capa | Tecnología | Propósito |
+|------|-----------|-----------|
+| Markup | HTML5 semántico | Estructura de todas las páginas |
+| Estilos | CSS3 (variables, grid, flexbox) | Diseño responsivo, sin framework |
+| Lógica | JavaScript ES6+ (vanilla) | Interactividad, catálogo dinámico |
+| Componentes | Web Components (Custom Elements v1) | Header y footer reutilizables |
+| Datos | `catalog-data.js` (JSON-like) | Fuente única de verdad del catálogo |
+| Fuentes | Google Fonts (Corben + Montserrat) | Tipografía de marca |
+| Iconos | SVG inline | Sin dependencias de FontAwesome |
+| Hosting | GitHub Pages + CNAME | Deploy automático desde rama `main` |
+| CI/CD | GitHub Actions | Compresión automática de imágenes |
+| SEO | Schema.org, Open Graph, Twitter Card | Enriquecimiento en buscadores y redes |
+
+---
+
+## Estructura del Repositorio
 
 ```
-misajo-website/
+MisajoCookies/
+├── index.html                      # Página principal (Home)
+├── catalogo.html                   # Catálogo completo (productos + combos)
+├── nosotros.html                   # Historia y valores de la marca
+├── contacto.html                   # Canales de contacto
+├── domicilios-cali.html            # Landing page de domicilios en Cali
+├── galletas-artesanales-cali.html  # Página pilar SEO
 │
-├── index.html                 # Página principal
-├── css/
-│   └── styles.css            # Estilos CSS
-├── js/
-│   └── main.js               # JavaScript
-├── images/                   # 📸 AQUÍ VAN TODAS LAS IMÁGENES
-│   ├── hero-cookie-1.jpg
-│   ├── hero-cookie-2.jpg
-│   ├── hero-cookie-3.jpg
-│   ├── galletas-mantequilla.jpg
-│   ├── galletas-chocochips.jpg
-│   ├── galletas-fiesta.jpg
-│   ├── alfajores.jpg
-│   ├── alfajores-corazon.jpg
-│   ├── galletas-bigote.jpg
-│   ├── combo-premium.jpg
-│   ├── combo-dulce.jpg
-│   └── about-misaj-cookie.jpg
-└── README.md                 # Este archivo
+├── productos/
+│   ├── index.html                  # Listado de productos
+│   ├── alfajores.html
+│   ├── alfajores-corazon.html
+│   ├── cookie-dip-premium.html
+│   ├── cookie-shaker-supreme.html
+│   ├── galletas-bigote.html
+│   ├── galletas-chocochips.html
+│   ├── galletas-fiesta.html
+│   └── galletas-mantequilla.html
+│
+├── combos/
+│   └── index.html                  # Listado de combos regalo
+│
+├── blog/
+│   ├── regalos-originales-cali.html
+│   └── post-seo.html
+│
+├── tarjetas/                       # Tarjetas digitales de presentación
+│   ├── misajocookies.html
+│   ├── alejandra-chavez.html
+│   └── miguel-angel-zapata.html
+│
+├── assets/
+│   ├── css/
+│   │   ├── styles.css              # Hoja de estilos principal (1,100+ líneas)
+│   │   └── slider.css              # Estilos del carrusel de imágenes
+│   ├── js/
+│   │   ├── catalog-data.js         # Base de datos del catálogo (productos + combos)
+│   │   ├── catalog-render.js       # Motor de renderizado del catálogo
+│   │   ├── main.js                 # Lógica general (animaciones, scroll, slider)
+│   │   └── components/
+│   │       ├── misajo-header.js    # Web Component: cabecera global
+│   │       └── misajo-footer.js    # Web Component: pie de página global
+│   └── images/
+│       ├── favicon/                # Set completo de favicons (ICO, SVG, PNG, Manifest)
+│       ├── hero-cookie-1.webp      # Imagen hero rotatoria
+│       ├── hero-cookie-2.webp
+│       ├── hero-cookie-3.webp
+│       ├── logo.webp               # Logo de la marca
+│       ├── mascota.webp            # Mascota MisajoCookies
+│       ├── about-misaj-cookie.webp # Imagen sección "Nosotros"
+│       ├── [producto].webp         # Imágenes individuales de productos
+│       └── [combo].webp            # Imágenes de combos (algunos con variantes)
+│
+├── sitemap.xml                     # Mapa del sitio para Google (20 URLs)
+├── robots.txt                      # Directivas para crawlers
+├── CNAME                           # Dominio personalizado: www.misajocookies.com
+├── compress-images.sh              # Script manual de compresión de imágenes
+└── .github/
+    └── workflows/
+        └── compress-images.yml     # CI: compresión automática de WebP en cada push
 ```
 
 ---
 
-## 📸 Guía de Imágenes
+## Instalación y Configuración Local
 
-### **Carpeta: `images/`**
+Este proyecto **no requiere instalación de dependencias**. Es HTML/CSS/JS puro.
 
-Coloca las siguientes imágenes en la carpeta `images/`. Los nombres deben ser **exactamente** como se indica:
+### Requisitos
+- Cualquier editor de código (VS Code recomendado)
+- Un navegador moderno (Chrome, Firefox, Edge)
+- Git (para clonar el repositorio)
 
-### **1. Sección Hero (3 imágenes flotantes)**
+### Pasos
 
-| Archivo | Descripción | Foto Original Recomendada |
-|---------|-------------|---------------------------|
-| `hero-cookie-1.jpg` | Galleta principal destacada | Usa una foto atractiva de ChocoChips o Mantequilla |
-| `hero-cookie-2.jpg` | Segunda galleta flotante | Usa Galletas Fiesta o Alfajores |
-| `hero-cookie-3.jpg` | Tercera galleta flotante | Usa Bigote o Corazón |
-
-**Consejo:** Estas imágenes deben ser llamativas y en alta calidad, son lo primero que verán los visitantes.
-
----
-
-### **2. Productos (6 imágenes)**
-
-| Archivo | Descripción | Foto Original a Usar |
-|---------|-------------|----------------------|
-| `galletas-mantequilla.jpg` | Galletas de Mantequilla | `00_MISAJO_PUB2_01.jpg` |
-| `galletas-chocochips.jpg` | Galletas con Chips de Chocolate | `00_MISAJO_PUB2_02.jpg` |
-| `galletas-fiesta.jpg` | Galletas con Grageas de Colores | `00_MISAJO_PUB2_03.jpg` |
-| `alfajores.jpg` | Alfajores Tradicionales | `00_MISAJO_PUB2_04.jpg` |
-| `alfajores-corazon.jpg` | Alfajores en forma de Corazón | `00_MISAJO_PUB2_05.jpg` |
-| `galletas-bigote.jpg` | Galletas Bigote | `00_MISAJO_PUB2_06.jpg` |
-
-**Formato recomendado:**
-- Tamaño: Al menos 800x600 px
-- Formato: JPG o PNG
-- Peso: Optimizado (menos de 500KB cada una)
-
----
-
-### **3. Combos Navideños (2 imágenes)**
-
-| Archivo | Descripción | Foto Original a Usar |
-|---------|-------------|----------------------|
-| `combo-premium.jpg` | Combo Premium (Galletas + Licor + Caja) | `WhatsApp_Image_2026-02-16_at_4_59_45_PM__1_.jpeg` |
-| `combo-dulce.jpg` | Combo Dulce (Galletas + Vela + Caja) | `WhatsApp_Image_2026-02-16_at_4_59_45_PM.jpeg` |
-
----
-
-### **4. Sección "Sobre Nosotros" (1 imagen)**
-
-| Archivo | Descripción | Sugerencia |
-|---------|-------------|------------|
-| `about-misaj-cookie.jpg` | Imagen institucional o del proceso | Puedes usar: <br>• Logo ampliado (`MISAJO_PUB2_LOGO.jpg`)<br>• Foto del proceso de elaboración<br>• Composición de varias galletas<br>• Foto de la cocina o workspace |
-
----
-
-## 🎨 Logo (Opcional)
-
-Si quieres usar el logo en el header en lugar del texto:
-
-1. Exporta el logo del PDF como PNG con fondo transparente
-2. Guárdalo como `images/logo-misaj-cookie.png`
-3. En `index.html`, reemplaza la sección del logo:
-
-```html
-<!-- Reemplaza esto: -->
-<div class="logo-text">
-    Misaj <span class="cookie">COOKIE</span>
-</div>
-
-<!-- Por esto: -->
-<img src="images/logo-misaj-cookie.png" alt="Misaj Cookie" style="height: 60px;">
+**1. Clonar el repositorio**
+```bash
+git clone https://github.com/MisajoCookies/MisajoCookies.git
+cd MisajoCookies
 ```
 
+**2. Abrir el sitio localmente**
+
+Opción A — Extensión Live Server en VS Code (recomendada):
+```
+1. Instalar extensión "Live Server" en VS Code
+2. Click derecho en index.html → "Open with Live Server"
+3. El sitio abre en http://127.0.0.1:5500/
+```
+
+Opción B — Servidor HTTP con Python:
+```bash
+python -m http.server 8080
+# Abrir: http://localhost:8080
+```
+
+> **Importante:** No abrir `index.html` directamente como archivo (`file://`). Los Web Components y las rutas absolutas (`/assets/...`) requieren un servidor HTTP.
+
+**3. Editar contenido**
+
+Los cambios más comunes se hacen en estos archivos:
+
+| Qué cambiar | Dónde |
+|-------------|-------|
+| Agregar/editar producto | `assets/js/catalog-data.js` |
+| Cambiar navegación global | `assets/js/components/misajo-header.js` |
+| Cambiar footer o datos NAP | `assets/js/components/misajo-footer.js` |
+| Estilos globales | `assets/css/styles.css` |
+| Contenido del Home | `index.html` |
+
 ---
 
-## 🚀 Cómo Subir a GitHub Pages
+## Deploy a Producción
 
-### **Paso 1: Crear Repositorio en GitHub**
-
-1. Ve a [GitHub.com](https://github.com)
-2. Click en **"New repository"**
-3. Nombre del repositorio: `misajo-cookie` (o el que prefieras)
-4. Marca como **Public**
-5. Click en **"Create repository"**
-
-### **Paso 2: Subir Archivos**
-
-**Opción A: Desde la Web de GitHub**
-
-1. En tu nuevo repositorio, click en **"Add file"** → **"Upload files"**
-2. Arrastra todas las carpetas y archivos del proyecto
-3. Escribe un mensaje: "Primera versión del sitio web"
-4. Click en **"Commit changes"**
-
-**Opción B: Usando Git desde Terminal**
+El sitio se despliega automáticamente en GitHub Pages con cada `push` a la rama `main`.
 
 ```bash
-# Navega a la carpeta del proyecto
-cd misajo-website
-
-# Inicializa Git
-git init
-
-# Añade todos los archivos
 git add .
-
-# Haz el primer commit
-git commit -m "Primera versión del sitio web"
-
-# Conecta con GitHub (reemplaza con tu URL)
-git remote add origin https://github.com/TU-USUARIO/misajo-cookie.git
-
-# Sube los archivos
-git branch -M main
-git push -u origin main
+git commit -m "descripción del cambio"
+git push origin main
+# El sitio se actualiza en ~1-2 minutos en www.misajocookies.com
 ```
 
-### **Paso 3: Activar GitHub Pages**
+### Pipeline de CI/CD
 
-1. Ve a tu repositorio en GitHub
-2. Click en **"Settings"** (Configuración)
-3. En el menú lateral, click en **"Pages"**
-4. En **"Source"**, selecciona **"main"** branch
-5. Click en **"Save"**
-6. ¡Listo! Tu sitio estará en: `https://TU-USUARIO.github.io/misajo-cookie/`
+Además del deploy, GitHub Actions ejecuta automáticamente la compresión de imágenes:
 
----
-
-## ✅ Checklist Antes de Subir
-
-- [ ] Todas las 12 imágenes están en la carpeta `images/`
-- [ ] Los nombres de las imágenes coinciden exactamente con los del código
-- [ ] Las imágenes están optimizadas (menos de 500KB cada una)
-- [ ] Has probado el sitio localmente abriendo `index.html`
-- [ ] Los enlaces de WhatsApp funcionan correctamente
-- [ ] Has actualizado los enlaces de Facebook e Instagram con los reales
-
----
-
-## 📱 Actualizar Redes Sociales
-
-En el archivo `index.html`, busca esta sección y actualiza con tus enlaces reales:
-
-```html
-<!-- Línea ~280-290 aproximadamente -->
-<a href="https://facebook.com/misajcookie" target="_blank" class="social-btn facebook">
-<!-- Cambia "misajcookie" por tu usuario real de Facebook -->
-
-<a href="https://instagram.com/misajcookie" target="_blank" class="social-btn instagram">
-<!-- Cambia "misajcookie" por tu usuario real de Instagram -->
+```
+Push con nuevas imágenes WebP
+        ↓
+compress-images.yml se activa
+        ↓
+Decodifica WebP → Recomprime a calidad 75% con cwebp
+        ↓
+Auto-commit: "perf: comprimir imágenes WebP (calidad 75%) [skip ci]"
+        ↓
+Push automático a main
 ```
 
 ---
 
-## 🎯 Próximos Pasos (Opcional)
+## Catálogo de Productos
 
-### **Mejoras Futuras:**
+El catálogo está centralizado en `assets/js/catalog-data.js` y es la **única fuente de verdad**.
 
-1. **Añadir Google Analytics** para ver visitantes
-2. **Optimizar SEO** con meta tags
-3. **Agregar Favicon** (icono en la pestaña del navegador)
-4. **Crear formulario de contacto**
-5. **Agregar más productos** según los vayas creando
+### Productos Individuales (precio unitario: $4.000 COP)
 
----
+| ID | Nombre | Presentación |
+|----|--------|-------------|
+| `galletas-mantequilla` | Galletas de Mantequilla | Paquete x 5 unidades, 50gr |
+| `galletas-topping` | Galletas con Topping | Múltiples variantes visuales |
+| `alfajores` | Alfajores Clásicos | Dulce de leche + coco |
+| `alfajores-corazon` | Alfajores Corazón | Edición especial |
+| `galletas-bigote` | Galletas Bigote | Decoración artesanal |
+| `cookie-dip-premium` | Cookie Dip Premium | $12.000 COP |
+| `cookie-shaker-supreme` | Cookie Shaker Supreme | $10.000 COP |
 
-## 🆘 Soporte
+### Combos Regalo
 
-Si tienes problemas:
-
-1. Verifica que todos los nombres de archivos sean correctos (sensibles a mayúsculas/minúsculas)
-2. Revisa la consola del navegador (F12) para ver errores
-3. Asegúrate de que las imágenes estén en formato `.jpg` o `.png`
-
----
-
-## 📄 Licencia
-
-© 2026 Misaj Cookie. Todos los derechos reservados.
+| ID | Nombre | Precio | Incluye |
+|----|--------|--------|---------|
+| `combo-deleite` | Combo Deleite | $17.000 COP | Galletas + Juan Valdez o Hatsu |
+| `combo-dulce` | Combo Dulce | $15.000 COP | Galletas + vela aromática |
+| `combo-premium` | Combo Premium | $25.000 COP | Galletas + licor (Jack Daniel's o Jägermeister) |
 
 ---
 
-**¡Disfruta tu nuevo sitio web! 🍪✨**
+## SEO y Posicionamiento
+
+El sitio implementa una estrategia SEO completa:
+
+- **Schema.org**: `Bakery`, `LocalBusiness`, `Product`, `BlogPosting`, `BreadcrumbList`
+- **Open Graph** y **Twitter Cards** en todas las páginas
+- **Geo-meta tags**: coordenadas de Cali, Colombia
+- **Canonical URLs**: apuntan a `www.misajocookies.com`
+- **Sitemap**: 20 URLs con prioridades y frecuencias de cambio
+- **Página pilar**: `galletas-artesanales-cali.html` (SEO priority: 0.9)
+- **NAP consistente**: Nombre, dirección y teléfono idénticos en footer y schema
+
+---
+
+## Contacto y Canales de Venta
+
+- **WhatsApp**: +57 315 903 8449
+- **Instagram**: [@misajocookies](https://instagram.com/misajocookies)
+- **Facebook**: [MisajoCookies](https://facebook.com/misajocookies)
+- **Web**: [www.misajocookies.com](https://www.misajocookies.com)
+
+---
+
+## Licencia
+
+© 2026 MisajoCookies. Todos los derechos reservados.
