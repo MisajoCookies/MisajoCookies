@@ -19,6 +19,8 @@ class MisajoFooter extends HTMLElement {
                     <a href="/contacto.html" style="color: inherit; white-space: nowrap;">Contacto</a>
                     <span style="opacity: 0.4;">|</span>
                     <a href="/nosotros.html" style="color: inherit; white-space: nowrap;">Nosotros</a>
+                    <span style="opacity: 0.4;">|</span>
+                    <a href="/pedidos/" style="color: inherit; white-space: nowrap;">Haz Tu Pedido</a>
                 </nav>
                 <p>&copy; ${currentYear} <span itemprop="name">MisajoCookies</span>. Todos los derechos reservados. Hecho con ❤️ en <span
                         itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><span

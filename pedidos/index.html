@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <title>Haz Tu Pedido de Galletas Artesanales | MisajoCookies Cali</title>
+  <meta name="description" content="Arma tu pedido de galletas artesanales MisajoCookies a tu gusto: paquetes, combos, productos premium y extras. Domicilio en Cali. ¡Pídelo por WhatsApp!">
+  <link rel="canonical" href="https://www.misajocookies.com/pedidos/">
+
+  <meta property="og:type"        content="website">
+  <meta property="og:url"         content="https://www.misajocookies.com/pedidos/">
+  <meta property="og:title"       content="Haz Tu Pedido | MisajoCookies Cali">
+  <meta property="og:description" content="Configura tu pedido de galletas artesanales. Combos, paquetes, extras y domicilio en Cali.">
+  <meta property="og:image"       content="https://www.misajocookies.com/assets/images/mascota.webp">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Pedidos a domicilio MisajoCookies",
+    "description": "Configurador de pedidos de galletas artesanales con domicilio en Cali, Colombia.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "MisajoCookies",
+      "url": "https://www.misajocookies.com",
+      "telephone": "+573159038449",
+      "address": { "@type": "PostalAddress", "addressLocality": "Cali", "addressCountry": "CO" }
+    },
+    "areaServed": { "@type": "City", "name": "Cali" }
+  }
+  </script>
+
+  <link rel="stylesheet" href="../assets/css/pedidos.css">
+  <link rel="stylesheet" href="../assets/css/styles.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="../assets/css/styles.css"></noscript>
+
+  <link rel="icon" href="../assets/images/favicon/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/images/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/images/favicon/site.webmanifest">
+
+  <script src="../assets/js/catalog-data.js"></script>
+  <script src="../assets/js/barrios-data.js"></script>
+  <script src="../assets/js/components/misajo-header.js" defer></script>
+  <script src="../assets/js/components/misajo-footer.js" defer></script>
+  <script src="../assets/js/pedidos-builder.js" defer></script>
+</head>
+
+<body>
+  <misajo-header></misajo-header>
+
+  <noscript>
+    <div style="text-align:center;padding:4rem 1rem;font-family:sans-serif;">
+      <p>Para hacer tu pedido escríbenos directamente al WhatsApp:</p>
+      <a href="https://wa.me/573159038449" style="font-size:1.2rem;color:#25D366;">+57 315 903 8449</a>
+    </div>
+  </noscript>
+
+  <div class="pedidos-layout">
+
+    <!-- ══ COLUMNA IZQUIERDA ══════════════════════════════════════ -->
+    <div class="pedidos-main">
+
+      <div class="page-header">
+        <h1 class="page-title">Haz Tu Pedido</h1>
+        <p class="page-subtitle">Arma tu pedido a tu gusto · Domicilio en Cali</p>
+      </div>
+
+      <div id="hours-banner" hidden role="alert">
+        🕐 Atendemos todos los días de <strong>1:00 pm a 7:00 pm</strong>.
+        Puedes configurar tu pedido ahora y te respondemos en horario.
+      </div>
+      <div id="wa-browser-warning" hidden role="alert">
+        ⚠️ Estás dentro de WhatsApp. <strong>Abre esta página en Chrome o Safari</strong> para hacer tu pedido.
+      </div>
+      <div id="form-error" hidden role="alert"></div>
+
+      <!-- A: Galletas base -->
+      <section class="pedido-section" aria-labelledby="sec-galletas">
+        <h2 class="pedido-section__title" id="sec-galletas">🍪 Paquetes de Galletas — $4.000 c/u</h2>
+        <div class="pedido-grid" id="packages-grid"></div>
+      </section>
+
+      <!-- B: Premium -->
+      <section class="pedido-section" aria-labelledby="sec-premium">
+        <h2 class="pedido-section__title" id="sec-premium">⭐ Productos Premium</h2>
+        <p style="font-size:0.85rem;color:#666;margin:-0.5rem 0 1rem;">Incluyen dip. Elige el sabor que prefieres.</p>
+        <div class="pedido-grid" id="premium-grid"></div>
+      </section>
+
+      <!-- C: Combos -->
+      <section class="pedido-section" aria-labelledby="sec-combos">
+        <h2 class="pedido-section__title" id="sec-combos">🎁 Combos Pre-armados</h2>
+        <p style="font-size:0.85rem;color:#666;margin:-0.5rem 0 1rem;">Puedes agregarles extras desde la sección siguiente.</p>
+        <div class="pedido-grid" id="combos-grid"></div>
+      </section>
+
+      <!-- D: Extras -->
+      <section class="pedido-section" aria-labelledby="sec-extras">
+        <h2 class="pedido-section__title" id="sec-extras">🧩 Extras y Accesorios</h2>
+        <div class="extras-list">
+
+          <div class="extra-row">
+            <span class="extra-row__icon">☕</span>
+            <div class="extra-row__info">
+              <div class="extra-row__name">Café Juan Valdez (250ml)</div>
+              <div class="extra-row__price">$5.000 c/u</div>
+            </div>
+            <div class="qty-control" role="group" aria-label="Cantidad Café Juan Valdez">
+              <button class="qty-btn" data-action="dec" data-id="cafeJuanValdez" data-type="extra" aria-label="Quitar uno">−</button>
+              <span class="qty-display" id="qty-extra-cafeJuanValdez">0</span>
+              <button class="qty-btn" data-action="inc" data-id="cafeJuanValdez" data-type="extra" aria-label="Agregar uno">+</button>
+            </div>
+          </div>
+
+          <div class="extra-row">
+            <span class="extra-row__icon">🧃</span>
+            <div class="extra-row__info">
+              <div class="extra-row__name">Té Hatsu (250ml)</div>
+              <div class="extra-row__price">$5.000 c/u · especifica el sabor en notas</div>
+            </div>
+            <div class="qty-control" role="group" aria-label="Cantidad Té Hatsu">
+              <button class="qty-btn" data-action="dec" data-id="teHatsu" data-type="extra" aria-label="Quitar uno">−</button>
+              <span class="qty-display" id="qty-extra-teHatsu">0</span>
+              <button class="qty-btn" data-action="inc" data-id="teHatsu" data-type="extra" aria-label="Agregar uno">+</button>
+            </div>
+          </div>
+
+          <div class="extra-row">
+            <span class="extra-row__icon">🕯️</span>
+            <div class="extra-row__info">
+              <div class="extra-row__name">Vela aromática</div>
+              <div class="extra-row__price">$3.000 c/u</div>
+            </div>
+            <div class="qty-control" role="group" aria-label="Cantidad Vela">
+              <button class="qty-btn" data-action="dec" data-id="vela" data-type="extra" aria-label="Quitar uno">−</button>
+              <span class="qty-display" id="qty-extra-vela">0</span>
+              <button class="qty-btn" data-action="inc" data-id="vela" data-type="extra" aria-label="Agregar uno">+</button>
+            </div>
+          </div>
+
+          <div class="extra-row">
+            <span class="extra-row__icon">🍫</span>
+            <div class="extra-row__info">
+              <div class="extra-row__name">Dip Arequipe</div>
+              <div class="extra-row__price">$2.000 c/u</div>
+            </div>
+            <div class="qty-control" role="group" aria-label="Cantidad Dip Arequipe">
+              <button class="qty-btn" data-action="dec" data-id="dipArequipe" data-type="extra" aria-label="Quitar uno">−</button>
+              <span class="qty-display" id="qty-extra-dipArequipe">0</span>
+              <button class="qty-btn" data-action="inc" data-id="dipArequipe" data-type="extra" aria-label="Agregar uno">+</button>
+            </div>
+          </div>
+
+          <div class="extra-row">
+            <span class="extra-row__icon">🍫</span>
+            <div class="extra-row__info">
+              <div class="extra-row__name">Dip Chocolate Negro</div>
+              <div class="extra-row__price">$2.000 c/u</div>
+            </div>
+            <div class="qty-control" role="group" aria-label="Cantidad Dip Chocolate Negro">
+              <button class="qty-btn" data-action="dec" data-id="dipChocoNegro" data-type="extra" aria-label="Quitar uno">−</button>
+              <span class="qty-display" id="qty-extra-dipChocoNegro">0</span>
+              <button class="qty-btn" data-action="inc" data-id="dipChocoNegro" data-type="extra" aria-label="Agregar uno">+</button>
+            </div>
+          </div>
+
+          <div class="extra-row">
+            <span class="extra-row__icon">⬜</span>
+            <div class="extra-row__info">
+              <div class="extra-row__name">Dip Chocolate Blanco</div>
+              <div class="extra-row__price">$3.000 c/u</div>
+            </div>
+            <div class="qty-control" role="group" aria-label="Cantidad Dip Chocolate Blanco">
+              <button class="qty-btn" data-action="dec" data-id="dipChocoBlanco" data-type="extra" aria-label="Quitar uno">−</button>
+              <span class="qty-display" id="qty-extra-dipChocoBlanco">0</span>
+              <button class="qty-btn" data-action="inc" data-id="dipChocoBlanco" data-type="extra" aria-label="Agregar uno">+</button>
+            </div>
+          </div>
+
+          <div class="caja-row">
+            <span style="font-size:1.4rem;">📦</span>
+            <label>
+              <input type="checkbox" id="caja-check" aria-label="Agregar caja de presentación ($2.000)">
+              Caja de presentación
+            </label>
+            <span style="margin-left:auto;color:var(--color-accent);font-weight:600;font-size:0.9rem;">$2.000</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- E: Galleta gratis (condicional) -->
+      <section id="free-package-section" hidden aria-labelledby="sec-free">
+        <h2 id="sec-free" style="margin:0 0 0.5rem;color:#7a5900;">🎁 ¡Ganaste 1 paquete de galletas gratis!</h2>
+        <p style="font-size:0.85rem;color:#7a5900;margin:0 0 1rem;">Compra mayor a $60.000. Elige tu favorito:</p>
+        <div class="free-options" id="free-package-options"></div>
+      </section>
+
+      <!-- Carrito mobile (acordeón) -->
+      <div class="mobile-cart-section" style="margin-top:2rem;">
+        <button id="cart-toggle" type="button">
+          🛒 Tu carrito
+          <span class="cart-toggle-count">(vacío)</span>
+          <span class="cart-toggle-arrow">▼</span>
+        </button>
+        <div id="cart-mobile-content" hidden>
+          <div class="cart-items-mobile-inner">
+            <div id="cart-items-mobile" class="cart-items-wrap"></div>
+            <p id="cart-empty-mobile" class="cart-empty">Aún no has agregado nada 👆</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- F: Datos de entrega -->
+      <section class="pedido-section" aria-labelledby="sec-delivery" style="margin-top:2rem;">
+        <h2 class="pedido-section__title" id="sec-delivery">📍 Datos de Entrega</h2>
+        <div class="delivery-form">
+
+          <label for="barrio-select">Barrio / Zona
+            <select id="barrio-select" required>
+              <option value="">— Selecciona tu barrio —</option>
+            </select>
+          </label>
+
+          <p id="out-of-cali-note" hidden style="font-size:0.82rem;color:#888;margin:0;">
+            El domicilio gratis (≥$40.000) aplica solo dentro de Cali. Tu costo de domicilio se coordina por WhatsApp.
+          </p>
+
+          <label for="address-input">Dirección de entrega
+            <input type="text" id="address-input" placeholder="Ej: Cra 50 #12-34, Apto 201" required autocomplete="street-address">
+          </label>
+
+          <label for="notes-input">Notas del pedido <span style="font-weight:400;opacity:.7">(opcional)</span>
+            <textarea id="notes-input" placeholder="Ej: Hatsu de maracuyá, dip de arequipe…"></textarea>
+          </label>
+        </div>
+
+        <button class="submit-btn submit-btn--secondary" id="submit-btn" type="button" aria-label="Enviar pedido por WhatsApp">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+            <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+          </svg>
+          Enviar pedido por WhatsApp
+        </button>
+      </section>
+
+    </div><!-- /pedidos-main -->
+
+    <!-- ══ SIDEBAR DESKTOP ════════════════════════════════════════ -->
+    <aside class="order-summary" aria-label="Resumen de tu pedido">
+      <h2>Tu Pedido</h2>
+
+      <!-- Ítems del carrito -->
+      <div id="cart-items" class="cart-items-wrap"></div>
+      <p id="cart-empty" class="cart-empty">Aún no has agregado nada 👆</p>
+
+      <hr class="cart-separator">
+
+      <!-- Barras progreso -->
+      <div class="progress-section">
+        <div class="progress-label"><span>Domicilio gratis</span><span>$40.000</span></div>
+        <div class="progress-track"><div class="progress-fill" id="progress-40k"></div></div>
+        <div class="progress-label"><span>Paquete gratis</span><span>$60.001</span></div>
+        <div class="progress-track"><div class="progress-fill progress-fill--green" id="progress-60k"></div></div>
+        <p id="progress-msg" class="progress-msg"></p>
+      </div>
+
+      <!-- Totales -->
+      <div class="sum-row"><span class="sum-label">Subtotal</span><span id="sum-subtotal">$0</span></div>
+      <div class="sum-row"><span class="sum-label">Domicilio</span><span id="sum-delivery">—</span></div>
+      <small id="sum-delivery-note"></small>
+      <p id="out-of-cali-note-sidebar" hidden>El domicilio gratis aplica solo dentro de Cali.</p>
+      <div class="sum-row sum-row--total"><span>TOTAL</span><span id="sum-total">$0</span></div>
+
+      <button class="submit-btn" onclick="document.getElementById('submit-btn').click()" type="button" aria-label="Enviar pedido por WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
+          <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/>
+        </svg>
+        Enviar por WhatsApp
+      </button>
+    </aside>
+
+  </div><!-- /pedidos-layout -->
+
+  <!-- ══ BOTTOM BAR MOBILE ══════════════════════════════════════ -->
+  <div class="order-bottom-bar" aria-label="Resumen de tu pedido">
+    <div class="bar-row">
+      <span>Subtotal: <strong id="sum-subtotal-mob">$0</strong></span>
+      <span>Domicilio: <strong id="sum-delivery-mob">—</strong></span>
+    </div>
+    <div class="bar-row">
+      <span class="bar-total">Total: <span id="sum-total-mob">$0</span></span>
+      <button class="submit-btn" style="width:auto;padding:0.45rem 1rem;margin-top:0;font-size:0.85rem;" onclick="document.getElementById('submit-btn').click()" type="button">
+        WhatsApp
+      </button>
+    </div>
+  </div>
+
+  <misajo-footer></misajo-footer>
+</body>
+</html>

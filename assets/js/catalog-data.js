@@ -117,7 +117,8 @@ const MISAJO_CATALOG = {
       description: 'La combinación perfecta para una pausa de lujo. Incluye dos paquetes de nuestras galletas artesanales de libre elección (50gr c/u), acompañados por la distinción de un Café Juan Valdez o la frescura de un Té Hatsu (250ml). Tú eliges tus favoritos; nosotros ponemos la excelencia.',
       price: '$17.000',
       images: [
-        { src: 'assets/images/combo-deleite.webp', alt: 'Combo Deleite galletas artesanales con café Juan Valdez o Té Hatsu MisajoCookies Cali', width: 1184, height: 864 }
+        { src: 'assets/images/combo-deleite1.webp',  alt: 'Combo Deleite galletas artesanales con café Juan Valdez o Té Hatsu MisajoCookies Cali', width: 1184, height: 864 },
+        { src: 'assets/images/combo-deleite2.webp', alt: 'Combo Deleite MisajoCookies Cali vista detalle', width: 1184, height: 864 }
       ],
       whatsapp: 'Hola!%20Quiero%20el%20Combo%20Deleite'
     },
