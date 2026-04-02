@@ -1,21 +1,49 @@
 /**
- * MisajoCookies — pedidos-builder.js  v2
- * Depende de: catalog-data.js (MISAJO_CATALOG), barrios-data.js (BARRIOS_CALI)
+ * MisajoCookies — pedidos-builder.js  v3
+ * Refactorizado con principios SOLID y DRY
+ * Depende de: catalog-data.js, barrios-data.js, config/app-config.js, card-builder.js, cart-persistence.js
  */
 
 // ─── Constantes ───────────────────────────────────────────────────────────────
-const WA_NUMBER        = '573159038449';
-const SHEETS_ENDPOINT  = ''; // Pegar URL del Google Apps Script Web App aquí
-const PRICE_CAJA       = 2000;
-const PRICE_DIP_STD    = 2000;
-const PRICE_DIP_CHOCO  = 3000;
-const PRICE_CAFE_HATSU = 5000;
-const PRICE_VELA       = 3000;
-const DIP_UPGRADE_SURCHARGE   = 1800;
-const FREE_DELIVERY_THRESHOLD = 40000;
-const FREE_PACKAGE_THRESHOLD  = 60001;
-const BUSINESS_HOUR_START = 13; // 1pm Colombia
-const BUSINESS_HOUR_END   = 19; // 7pm Colombia
+// NOTA: Las constantes ahora se obtienen de window.MISAJO_CONFIG
+// Ver assets/js/config/app-config.js para configuración centralizada
+
+const WA_NUMBER = window.getMisajoConfig ? window.getMisajoConfig('WA_NUMBER', '573159038449') : '573159038449';
+
+/**
+ * SHEETS_ENDPOINT - URL del Google Apps Script Web App
+ * 
+ * ⚠️ IMPORTANTE DE SEGURIDAD:
+ * Este endpoint debe configurarse a través de window.MISAJO_CONFIG.SHEETS_ENDPOINT
+ * 
+ * Para mayor seguridad en producción, considere:
+ * 1. Usar un proxy Cloudflare Worker que oculte la URL real
+ * 2. Implementar un backend intermedio (Node.js/Python)
+ * 3. Usar variables de entorno en GitHub Actions
+ * 
+ * Ejemplo de configuración segura:
+ *   window.MISAJO_CONFIG = {
+ *     SHEETS_ENDPOINT: '/api/pedidos' // Tu proxy/backend
+ *   };
+ */
+const SHEETS_ENDPOINT = window.getMisajoConfig ? window.getMisajoConfig('SHEETS_ENDPOINT', '') : '';
+
+// Precios desde configuración o valores por defecto
+const PRICING = window.getMisajoConfig ? window.getMisajoConfig('PRICING', {}) : {};
+
+const PRICE_CAJA       = PRICING.CAJA || 2000;
+const PRICE_DIP_STD    = PRICING.DIP_STD || 2000;
+const PRICE_DIP_CHOCO  = PRICING.DIP_CHOCO || 3000;
+const PRICE_CAFE_HATSU = PRICING.CAFE_HATSU || 5000;
+const PRICE_VELA       = PRICING.VELA || 3000;
+const DIP_UPGRADE_SURCHARGE   = PRICING.DIP_UPGRADE_SURCHARGE || 1800;
+const FREE_DELIVERY_THRESHOLD = PRICING.FREE_DELIVERY_THRESHOLD || 40000;
+const FREE_PACKAGE_THRESHOLD  = PRICING.FREE_PACKAGE_THRESHOLD || 60001;
+
+// Horarios desde configuración
+const BUSINESS_HOURS = window.getMisajoConfig ? window.getMisajoConfig('BUSINESS_HOURS', {}) : {};
+const BUSINESS_HOUR_START = BUSINESS_HOURS.START || 13; // 1pm Colombia
+const BUSINESS_HOUR_END   = BUSINESS_HOURS.END || 19;   // 7pm Colombia
 
 // Opciones de dip para productos premium
 const DIP_OPTIONS = [
@@ -505,6 +533,82 @@ function buildBarrioSelect() {
   });
 }
 
+// ─── Funciones Refactorizadas (usan Card Builder para DRY/SOLID) ──────────────
+/**
+ * Versión refactorizada que usa MisajoCardBuilder para construir tarjetas
+ * Cumple con SRP: solo orquesta, no construye HTML directamente
+ */
+function buildPackageCardsRefactored() {
+  const container = document.getElementById('packages-grid');
+  if (!container || !window.MisajoCardBuilder) return;
+
+  const PACKAGE_IDS = ['galletas-mantequilla','galletas-topping','alfajores','alfajores-corazon','galletas-bigote'];
+  
+  MISAJO_CATALOG.products.filter(p => PACKAGE_IDS.includes(p.id)).forEach(p => {
+    orderState.cookiePackages.push({ id: p.id, name: p.name, qty: 0, unitPrice: 4000 });
+    window.MisajoCardBuilder.renderPackageCard(p, 4000, container);
+  });
+}
+
+function buildPremiumCardsRefactored() {
+  const container = document.getElementById('premium-grid');
+  if (!container || !window.MisajoCardBuilder) return;
+
+  const PREMIUM_IDS = ['cookie-dip-premium','cookie-shaker-supreme'];
+  
+  MISAJO_CATALOG.products.filter(p => PREMIUM_IDS.includes(p.id)).forEach(p => {
+    const unitPrice = parseInt(p.price.replace(/\D/g,''));
+    orderState.premiumProducts.push({ 
+      id: p.id, 
+      name: p.name, 
+      qty: 0, 
+      unitPrice, 
+      dipFlavor: 'arequipe' 
+    });
+
+    // Callback para manejar cambio de dip
+    const onDipChange = (productId, newFlavor) => {
+      const item = orderState.premiumProducts.find(i => i.id === productId);
+      if (item) item.dipFlavor = newFlavor;
+      renderSummary();
+    };
+
+    window.MisajoCardBuilder.renderPremiumCard(
+      p, 
+      unitPrice, 
+      DIP_OPTIONS, 
+      container, 
+      onDipChange
+    );
+  });
+}
+
+function buildComboCardsRefactored() {
+  const container = document.getElementById('combos-grid');
+  if (!container || !window.MisajoCardBuilder) return;
+
+  MISAJO_CATALOG.combos.forEach(c => {
+    const unitPrice = parseInt(c.price.replace(/\D/g,''));
+    orderState.combos.push({ id: c.id, name: c.name, qty: 0, unitPrice });
+    window.MisajoCardBuilder.renderComboCard(c, unitPrice, container);
+  });
+}
+
+function buildFreePackageOptionsRefactored() {
+  const container = document.getElementById('free-package-options');
+  if (!container || !window.MisajoCardBuilder) return;
+
+  const PACKAGE_IDS = ['galletas-mantequilla','galletas-topping','alfajores','alfajores-corazon','galletas-bigote'];
+  const products = MISAJO_CATALOG.products.filter(p => PACKAGE_IDS.includes(p.id));
+  
+  const onSelect = (productId) => {
+    orderState.freePackageId = productId;
+    renderSummary();
+  };
+  
+  window.MisajoCardBuilder.renderFreePackageOptions(products, container, onSelect);
+}
+
 // ─── Horario de atención ──────────────────────────────────────────────────────
 function checkBusinessHours() {
   const banner = document.getElementById('hours-banner');
@@ -721,10 +825,29 @@ function detectWABrowser() {
 
 // ─── Init ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  buildPackageCards();
-  buildPremiumCards();
-  buildComboCards();
-  buildFreePackageOptions();
+  // Inicializar persistencia del carrito PRIMERO
+  let cartPersistence = null;
+  if (window.MisajoCartPersistence) {
+    cartPersistence = window.MisajoCartPersistence.init(orderState, renderSummary);
+  }
+
+  // Usar Card Builder si está disponible (refactorizado)
+  const useCardBuilder = !!window.MisajoCardBuilder;
+
+  if (useCardBuilder) {
+    // Versión refactorizada con Card Builder
+    buildPackageCardsRefactored();
+    buildPremiumCardsRefactored();
+    buildComboCardsRefactored();
+    buildFreePackageOptionsRefactored();
+  } else {
+    // Fallback a funciones originales
+    buildPackageCards();
+    buildPremiumCards();
+    buildComboCards();
+    buildFreePackageOptions();
+  }
+  
   buildBarrioSelect();
   attachQtyListeners();
   initMobileCartToggle();
