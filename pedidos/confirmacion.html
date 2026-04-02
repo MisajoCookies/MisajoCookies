@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Security Headers -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- SEO Meta Tags - Confirmación de Pago -->
+    <title>Confirmación de Pago - MisajoCookies Cali</title>
+    <meta name="description" content="Confirma tu pago de galletas artesanales en MisajoCookies Cali. Procesamos tu pedido de forma segura con Wompi.">
+    <meta name="keywords" content="confirmación pago galletas Cali, pago seguro MisajoCookies, transacción Wompi Cali">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.misajocookies.com/pedidos/confirmacion.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Confirmación de Pago - MisajoCookies">
+    <meta property="og:description" content="Estado de tu transacción de pago para galletas artesanales.">
+    <meta property="og:url" content="https://www.misajocookies.com/pedidos/confirmacion.html">
+    <meta property="og:locale" content="es_CO">
+
+    <!-- Geo Tags para SEO Local -->
+    <meta name="geo.region" content="CO-VAC">
+    <meta name="geo.placename" content="Cali">
+    <meta name="geo.position" content="3.4516;-76.5320">
+
+    <!-- Schema Markup - PaymentConfirmation -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Order",
+      "name": "Pedido MisajoCookies",
+      "description": "Pedido de galletas artesanales en Cali",
+      "orderStatus": "https://schema.org/OrderProcessing",
+      "merchant": {
+        "@type": "LocalBusiness",
+        "name": "MisajoCookies",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Cali",
+          "addressRegion": "Valle del Cauca",
+          "addressCountry": "CO"
+        }
+      },
+      "acceptedPaymentMethod": {
+        "@type": "PaymentMethod",
+        "name": "Wompi - Tarjetas de Crédito/Débito, PSE"
+      }
+    }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <style>
+        :root {
+            --color-primary: #8B4513;
+            --color-secondary: #D2691E;
+            --color-cream: #FFF8DC;
+            --color-chocolate: #5C3317;
+            --color-text: #333;
+            --color-text-light: #666;
+            --font-display: 'Corben', cursive;
+            --font-body: 'Montserrat', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background: linear-gradient(135deg, var(--color-cream) 0%, #FFE4B5 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .confirmation-container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(139, 69, 19, 0.15);
+            text-align: center;
+        }
+
+        .status-icon {
+            font-size: 5rem;
+            margin-bottom: 1.5rem;
+            animation: bounceIn 0.8s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0); opacity: 0; }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            color: var(--color-primary);
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .status-message {
+            font-size: 1.2rem;
+            color: var(--color-text-light);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .transaction-details {
+            background: var(--color-cream);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .transaction-details p {
+            margin: 0.5rem 0;
+            color: var(--color-text);
+        }
+
+        .transaction-details strong {
+            color: var(--color-chocolate);
+        }
+
+        .loading-spinner {
+            border: 4px solid var(--color-cream);
+            border-top: 4px solid var(--color-primary);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 1s linear infinite;
+            margin: 2rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+            color: white;
+            box-shadow: 0 4px 15px rgba(139, 69, 19, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--color-primary);
+            border: 2px solid var(--color-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-cream);
+        }
+
+        .payment-status {
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .payment-status.approved {
+            background: #d4edda;
+            border: 2px solid #28a745;
+        }
+
+        .payment-status.declined {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+
+        .payment-status.pending {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+        }
+
+        .payment-status.error {
+            background: #f8d7da;
+            border: 2px solid #dc3545;
+        }
+
+        #payment-loading,
+        #payment-error {
+            display: none;
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+        }
+
+        .alert-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .confirmation-container {
+                padding: 2rem 1.5rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .status-icon {
+                font-size: 4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirmation-container">
+        <!-- Loading State -->
+        <div id="payment-loading">
+            <div class="loading-spinner"></div>
+            <p style="color: var(--color-primary); margin-top: 1rem;">Verificando tu pago...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="payment-error" class="alert alert-error"></div>
+
+        <!-- Payment Status Container -->
+        <div id="payment-status" style="display: none;"></div>
+
+        <!-- Default Content (shown while loading) -->
+        <div id="default-content">
+            <div class="status-icon">🍪</div>
+            <h1>MisajoCookies</h1>
+            <p class="status-message">
+                Estamos verificando el estado de tu pago. Un momento por favor...
+            </p>
+        </div>
+
+        <!-- Action Buttons (hidden initially) -->
+        <div id="action-buttons" style="display: none; margin-top: 2rem;">
+            <a href="/productos/index.html" class="btn btn-primary">
+                🛒 Seguir Comprando
+            </a>
+            <a href="https://wa.me/573159038449" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                📱 Contactar por WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Application Scripts -->
+    <script type="module">
+        import { AppConfig } from '../src/infrastructure/config/AppConfig.js';
+        import { WompiPaymentAdapter } from '../src/infrastructure/adapters/external/WompiPaymentAdapter.js';
+        import { PaymentUseCase } from '../src/application/use-cases/PaymentUseCase.js';
+        import { PaymentController } from '../src/ui/controllers/PaymentController.js';
+
+        /**
+         * Inicializa la página de confirmación de pago
+         */
+        async function initPaymentConfirmation() {
+            try {
+                // Obtener parámetros de la URL
+                const urlParams = new URLSearchParams(window.location.search);
+                const transactionId = urlParams.get('transaction_id') || urlParams.get('id');
+
+                if (!transactionId) {
+                    showNoTransactionState();
+                    return;
+                }
+
+                // Inicializar adaptador de Wompi
+                const wompiConfig = AppConfig.getWompiConfig();
+                const wompiAdapter = new WompiPaymentAdapter(wompiConfig);
+
+                // Crear caso de uso y controlador
+                const paymentUseCase = new PaymentUseCase(wompiAdapter);
+                const paymentController = new PaymentController(paymentUseCase);
+
+                // Verificar estado del pago
+                await paymentController.verifyPaymentStatus(transactionId);
+
+                // Mostrar botones de acción
+                document.getElementById('action-buttons').style.display = 'block';
+                document.getElementById('default-content').style.display = 'none';
+
+            } catch (error) {
+                console.error('[Confirmación] Error initializing:', error);
+                showError('Error al cargar la confirmación. Por favor contacta a soporte.');
+            }
+        }
+
+        /**
+         * Muestra estado cuando no hay transacción
+         */
+        function showNoTransactionState() {
+            document.getElementById('default-content').innerHTML = `
+                <div class="status-icon">❓</div>
+                <h1>Sin Transacción</h1>
+                <p class="status-message">
+                    No se encontró información de la transacción. 
+                    Por favor verifica tu correo electrónico o contacta a soporte.
+                </p>
+            `;
+            document.getElementById('action-buttons').style.display = 'block';
+        }
+
+        /**
+         * Muestra mensaje de error
+         * @param {string} message - Mensaje de error
+         */
+        function showError(message) {
+            const errorElement = document.getElementById('payment-error');
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+            document.getElementById('payment-loading').style.display = 'none';
+        }
+
+        // Inicializar cuando el DOM esté listo
+        document.addEventListener('DOMContentLoaded', initPaymentConfirmation);
+    </script>
+</body>
+</html>
