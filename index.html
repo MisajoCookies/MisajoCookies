@@ -349,6 +349,10 @@
     <misajo-footer></misajo-footer>
 
     <!-- JavaScript -->
+    <!-- Configuración centralizada (debe cargarse antes que otros scripts) -->
+    <script src="assets/js/config/app-config.js"></script>
+    <!-- Gestor de consentimiento de cookies (bloquea scripts no esenciales hasta aprobación) -->
+    <script src="assets/js/cookie-consent.js" defer></script>
     <script src="assets/js/catalog-data.js"></script>
     <script src="assets/js/catalog-render.js"></script>
     <script src="assets/js/main.js" defer></script>

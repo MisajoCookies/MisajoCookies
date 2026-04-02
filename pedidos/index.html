@@ -43,6 +43,15 @@
 
   <script src="../assets/js/catalog-data.js"></script>
   <script src="../assets/js/barrios-data.js"></script>
+  <!-- Configuración centralizada (debe cargarse antes que otros scripts) -->
+  <script src="../assets/js/config/app-config.js"></script>
+  <!-- Gestor de consentimiento de cookies (bloquea scripts no esenciales hasta aprobación) -->
+  <script src="../assets/js/cookie-consent.js" defer></script>
+  <!-- Módulos refactorizados (SOLID/DRY) -->
+  <script src="../assets/js/card-builder.js" defer></script>
+  <script src="../assets/js/cart-persistence.js" defer></script>
+  <!-- Integración de pagos Wompi -->
+  <script src="../assets/js/wompi-payment.js" defer></script>
   <script src="../assets/js/components/misajo-header.js" defer></script>
   <script src="../assets/js/components/misajo-footer.js" defer></script>
   <script src="../assets/js/pedidos-builder.js" defer></script>
@@ -273,6 +282,9 @@
       <small id="sum-delivery-note"></small>
       <p id="out-of-cali-note-sidebar" hidden>El domicilio gratis aplica solo dentro de Cali.</p>
       <div class="sum-row sum-row--total"><span>TOTAL</span><span id="sum-total">$0</span></div>
+
+      <!-- Contenedor para botón de pago Wompi -->
+      <div id="wompi-payment-container" style="margin: 1rem 0;"></div>
 
       <button class="submit-btn" onclick="document.getElementById('submit-btn').click()" type="button" aria-label="Enviar pedido por WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true">
